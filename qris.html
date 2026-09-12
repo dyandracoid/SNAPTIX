@@ -3,21 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#07111f">
+<meta name="theme-color" content="#173d77">
 <meta name="color-scheme" content="light">
-<meta name="description" content="Halaman pembayaran QRIS Buzz Youth Fest — selesaikan pembayaran tiket Anda">
-<meta property="og:title" content="Buzz Youth Fest - Pembayaran QRIS">
+<meta name="description" content="Halaman pembayaran QRIS SnapTix — selesaikan pembayaran tiket Euphoria Life Festival 2027.">
+<meta property="og:title" content="SnapTix - Pembayaran QRIS | Euphoria Life Festival 2027">
 <meta property="og:description" content="Selesaikan pembayaran QRIS untuk mengkonfirmasi pesanan tiket Anda.">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎟️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<link rel="prefetch" href="success.html">
-<title>Buzz Youth Fest - Pembayaran QRIS</title>
+<title>SnapTix - Pembayaran QRIS | Euphoria Life Festival 2027</title>
 <noscript><style>.timer-box{display:none}</style></noscript>
 <style>
 :root{
@@ -44,11 +42,17 @@ body{
   -webkit-tap-highlight-color:transparent
 }
 body.no-scroll{overflow:hidden!important}
+[hidden]{display:none!important}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(53,97,255,.3);outline-offset:3px}
 .container{
   width:100%;max-width:520px;min-height:100vh;margin:auto;background:var(--ivory);
   box-shadow:0 0 55px rgba(36,49,70,.10);position:relative;overflow:clip
 }
+.mark{position:relative;display:inline-block;width:1em;height:1em;flex:none}
+.mark::before{content:"";position:absolute;width:.5em;height:.85em;left:.15em;top:.05em;border-radius:.16em .42em .16em .42em;transform:rotate(32deg);background:linear-gradient(145deg,#4F46E5,#6D64F0)}
+.mark::after{content:"";position:absolute;width:.47em;height:.5em;left:.4em;top:.47em;border-radius:.36em .1em .36em .1em;transform:rotate(-30deg);background:#D7EF29}
+.mark.gold::before{background:linear-gradient(180deg,#fff8d1,var(--gold-pale),var(--gold-deep))}
+.mark.gold::after{background:var(--gold-light)}
 .app-header{position:sticky;top:0;z-index:1000;background:#fff}
 .topbar{
   min-height:80px;padding:15px 20px;padding-top:calc(15px + env(safe-area-inset-top));
@@ -57,13 +61,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
   border-bottom:1px solid #eee9de
 }
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-img{
-  width:42px;height:42px;border-radius:12px;object-fit:cover;background:#fff;
-  box-shadow:0 4px 14px rgba(80,62,28,.10)
-}
+.logo .mark{font-size:40px}
 .logo-text{
-  font-size:21px;font-weight:900;letter-spacing:1.5px;
-  background:linear-gradient(180deg,#f1d789,var(--gold-deep) 55%,var(--gold-dark));
+  font-size:21px;font-weight:900;letter-spacing:-.5px;
+  background:linear-gradient(180deg,#5B8AFF,var(--navy));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent
 }
 .lang{
@@ -81,7 +82,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
 }
 .progress-inner{position:relative;z-index:1}
 .progress-track{position:absolute;top:15px;left:15px;right:15px;height:3px;background:rgba(255,255,255,.16);border-radius:999px}
-.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold-light),var(--gold),#fff0a2);border-radius:999px;box-shadow:0 0 10px rgba(244,217,138,.5);transition:.7s ease}
+.progress-fill{height:100%;width:66.6%;background:linear-gradient(90deg,var(--gold-light),var(--gold),#fff0a2);border-radius:999px;box-shadow:0 0 10px rgba(244,217,138,.5);transition:.7s ease}
 .progress-steps{display:flex;justify-content:space-between;list-style:none}
 .step{display:flex;flex-direction:column;align-items:center;gap:7px;flex:1}
 .step-dot{
@@ -115,6 +116,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
 .total-label{margin-top:15px;margin-bottom:4px}.total-price{font-size:27px;font-weight:900;line-height:1.1;color:var(--ink-strong)}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:15px;padding-top:15px;border-top:1px solid var(--line)}
 .detail-item{font-size:10px;color:var(--t-soft);text-transform:uppercase;letter-spacing:.5px;line-height:1.35}
+.detail-item.full{grid-column:1/-1}
 .detail-item span{display:block;color:#273347;font-weight:700;font-size:13px;margin-top:3px;word-break:break-word;text-transform:none;letter-spacing:0}
 .timer-box{
   display:flex;align-items:center;justify-content:space-between;padding:13px 16px;margin-bottom:17px;
@@ -147,7 +149,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
   display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;padding-bottom:12px;
   border-bottom:1px dashed rgba(244,217,138,.35);position:relative;z-index:1
 }
-.qris-frame-logo{width:25px;height:25px;border-radius:7px;object-fit:cover;background:#fff}
+.qris-frame-logo{font-size:26px;color:#fff}
 .qris-frame-brand{
   font-size:17px;font-weight:900;letter-spacing:1.8px;
   background:linear-gradient(180deg,#fff8d1,var(--gold-pale),var(--gold-deep));
@@ -214,6 +216,31 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
 }
 .submit-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 11px 25px rgba(53,97,255,.3)}
 .submit-btn:disabled{opacity:.48;cursor:not-allowed;box-shadow:none}
+.success-card{text-align:center}
+.success-icon{width:64px;height:64px;border-radius:50%;background:#e5f8ef;display:flex;align-items:center;justify-content:center;margin:4px auto 16px}
+.success-icon svg{width:30px;height:30px;stroke:var(--ok);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.success-title{font-size:21px;font-weight:900;color:var(--ink-strong)}
+.success-sub{font-size:12.5px;color:var(--muted);margin:8px 0 18px;line-height:1.65}
+.success-box{background:#faf9f6;border:1px solid var(--line);border-radius:13px;padding:5px 16px;margin-bottom:16px;text-align:left}
+.srow{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.srow:last-child{border-bottom:none}
+.srow span{color:var(--t-soft)}
+.srow strong{color:#273347;font-weight:700;text-align:right;word-break:break-word}
+.btn-wa{
+  width:100%;padding:14px;border:0;border-radius:13px;background:#25D366;color:#fff;font-weight:800;font-size:13px;
+  display:flex;justify-content:center;align-items:center;gap:9px;cursor:pointer;box-shadow:0 8px 20px rgba(37,211,102,.3);transition:.25s;margin-bottom:10px
+}
+.btn-wa:hover{transform:translateY(-1px);box-shadow:0 11px 24px rgba(37,211,102,.4)}
+.btn-wa i{font-size:16px}
+.btn-home{
+  width:100%;padding:14px;border-radius:13px;background:#f1f3f7;border:1px solid var(--line);color:var(--navy);
+  font-weight:800;font-size:13px;display:flex;justify-content:center;align-items:center;gap:8px;text-decoration:none;transition:.25s
+}
+.btn-home:hover{border-color:var(--blue);background:#eef2ff}
+.empty-card{text-align:center}
+.empty-icon{width:64px;height:64px;border-radius:50%;background:#FEF2F2;display:flex;align-items:center;justify-content:center;margin:4px auto 16px;color:var(--err);font-size:26px}
+.empty-card h2{font-size:19px;font-weight:900;color:var(--ink-strong)}
+.empty-card p{font-size:12.5px;color:var(--muted);margin:8px 0 18px;line-height:1.65}
 .loading-overlay{
   visibility:hidden;opacity:0;position:fixed;inset:0;background:rgba(16,43,87,.42);
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:99999;
@@ -247,6 +274,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
 .loading-bar-wrap{margin-top:18px;width:100%;height:7px;background:#edf0f5;border-radius:10px;overflow:hidden}
 .loading-bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),#6888ff);border-radius:10px;transition:width .3s linear}
 .loading-time{margin-top:8px;font-size:10px;color:#7b8494;font-family:monospace;letter-spacing:1px}
+.mini-footer{text-align:center;font-size:11px;color:var(--t-soft);padding:4px 18px 28px}
 @media(max-width:480px){.container{box-shadow:none}}
 @media(max-width:380px){
   .content{padding-left:14px;padding-right:14px}.progress{padding-left:15px;padding-right:15px}
@@ -266,8 +294,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
   <header class="app-header">
     <div class="topbar">
       <a href="index.html" class="logo">
-        <img src="logo.png" alt="Artarix" class="logo-img" width="42" height="42" decoding="async">
-        <span class="logo-text">Artarix</span>
+        <span class="mark" aria-hidden="true"></span>
+        <span class="logo-text">snaptix</span>
       </a>
       <div class="lang"><span aria-hidden="true">🇮🇩</span> ID</div>
     </div>
@@ -275,7 +303,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
     <div class="progress" role="progressbar" aria-valuenow="3" aria-valuemin="1" aria-valuemax="4" aria-valuetext="Langkah 3 dari 4: Pembayaran" aria-label="Progress pemesanan">
       <div class="progress-inner">
         <div class="progress-track" aria-hidden="true">
-          <div class="progress-fill" style="width:66.6%"></div>
+          <div class="progress-fill" id="progressFill"></div>
         </div>
         <ol class="progress-steps">
           <li class="step completed">
@@ -302,86 +330,114 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
   <main class="content">
     <noscript><p class="noscript-note">Aktifkan JavaScript untuk melihat ringkasan pesanan, mengunggah bukti pembayaran, dan mengonfirmasi pembayaran.</p></noscript>
 
-    <h1 class="page-title">Pembayaran QRIS</h1>
-    <p class="page-subtitle">Selesaikan pembayaran untuk mengkonfirmasi pesanan</p>
+    <div id="payArea">
+      <h1 class="page-title">Pembayaran QRIS</h1>
+      <p class="page-subtitle">Selesaikan pembayaran untuk mengkonfirmasi pesanan</p>
 
-    <section class="card" aria-label="Ringkasan pesanan">
-      <div class="order-label">Order ID</div>
-      <div id="orderId" class="order-id">-</div>
-      <div class="total-label">Total Pembayaran</div>
-      <div id="total" class="total-price">Rp 0</div>
-      <div class="detail-grid">
-        <div class="detail-item">Kategori Tiket<span id="jenisTiket">-</span></div>
-        <div class="detail-item">Jumlah Tiket<span id="jumlahTiket">0</span></div>
-        <div class="detail-item">Nama Pemesan<span id="namaPemesan">-</span></div>
-        <div class="detail-item">WhatsApp<span id="waPemesan">-</span></div>
+      <section class="card" aria-label="Ringkasan pesanan">
+        <div class="order-label">Order ID</div>
+        <div id="orderId" class="order-id">-</div>
+        <div class="total-label">Total Pembayaran</div>
+        <div id="total" class="total-price">Rp 0</div>
+        <div class="detail-grid">
+          <div class="detail-item full">Event<span>Euphoria Life Festival 2027 — Bandung</span></div>
+          <div class="detail-item">Kategori Tiket<span id="jenisTiket">-</span></div>
+          <div class="detail-item">Sesi<span id="sesiTiket">Sesi 1</span></div>
+          <div class="detail-item">Jumlah Tiket<span id="jumlahTiket">0</span></div>
+          <div class="detail-item">Nama Pemesan<span id="namaPemesan">-</span></div>
+          <div class="detail-item">WhatsApp<span id="waPemesan">-</span></div>
+        </div>
+      </section>
+
+      <div class="timer-box">
+        <div class="timer-label">Selesaikan pembayaran dalam</div>
+        <div id="timer" class="timer" role="timer" aria-label="Waktu tersisa">03:00</div>
       </div>
-    </section>
 
-    <div class="timer-box">
-      <div class="timer-label">Selesaikan pembayaran dalam</div>
-      <div id="timer" class="timer" role="timer" aria-label="Waktu tersisa">03:00</div>
+      <section class="qris-frame" aria-label="QRIS pembayaran">
+        <div class="qris-frame-glow" aria-hidden="true"></div>
+        <div class="qris-frame-header">
+          <span class="qris-frame-logo mark gold" aria-hidden="true"></span>
+          <span class="qris-frame-brand">SNAPTIX</span>
+        </div>
+        <div class="qris-frame-body">
+          <div class="qris-qr-wrap">
+            <img src="qris.png" alt="QRIS" id="qrisImg" width="150" height="150" decoding="async">
+            <div class="qris-scan-line" id="qrisScanLine" aria-hidden="true"></div>
+          </div>
+          <div id="qrisFallback" class="qris-fallback">QRIS tidak dapat dimuat. Gunakan Order ID di atas untuk konfirmasi pembayaran.</div>
+          <div class="qris-frame-label">QRIS</div>
+          <div class="qris-frame-standard">QR Code Standar Pembayaran Nasional</div>
+          <div class="qris-frame-scan">Scan untuk Pembayaran</div>
+          <div class="qris-amount-box">
+            <div class="qris-amount-label">Jumlah Pembayaran</div>
+            <div id="qrisTotalAmount" class="qris-amount-val">Rp 0</div>
+          </div>
+        </div>
+        <div class="qris-frame-footer">
+          <div class="qris-frame-nmid">Pembayaran QRIS • SnapTix</div>
+          <div class="qris-frame-methods" aria-hidden="true">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <i class="fa-solid fa-wallet"></i>
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+        </div>
+      </section>
+
+      <div class="scan-hint">
+        <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+        Scan dengan aplikasi e-wallet atau mobile banking
+      </div>
+
+      <section class="card" aria-label="Upload bukti pembayaran">
+        <label for="file" class="upload-label">
+          <div class="upload-area">
+            <span class="upload-icon"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i></span>
+            <h2>Upload Bukti Pembayaran</h2>
+            <p>Klik area ini untuk memilih bukti transfer QRIS</p>
+            <div class="file-types"><span>JPG</span><span>PNG</span><span>JPEG</span></div>
+          </div>
+          <input id="file" type="file" accept="image/*" class="input-sr">
+        </label>
+        <div id="preview" class="preview" aria-live="polite">
+          <img id="previewImg" alt="Preview bukti pembayaran">
+          <div id="fileName" class="file-name"></div>
+          <div class="success-msg"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Bukti pembayaran berhasil dipilih</div>
+        </div>
+        <div class="checkbox-wrap">
+          <input type="checkbox" id="cek">
+          <label for="cek">Saya menyatakan telah melakukan pembayaran dan mengunggah bukti pembayaran yang valid.</label>
+        </div>
+        <button id="btn" type="button" class="submit-btn" disabled>
+          <i class="fa-solid fa-lock" aria-hidden="true"></i> KONFIRMASI PEMBAYARAN
+        </button>
+      </section>
     </div>
 
-    <section class="qris-frame" aria-label="QRIS pembayaran">
-      <div class="qris-frame-glow" aria-hidden="true"></div>
-      <div class="qris-frame-header">
-        <img src="logo.png" alt="Buzz Youth Fest" class="qris-frame-logo" width="25" height="25" decoding="async">
-        <span class="qris-frame-brand">BUZZ YOUTH FEST</span>
-      </div>
-      <div class="qris-frame-body">
-        <div class="qris-qr-wrap">
-          <img src="qris.png" alt="QRIS" id="qrisImg" width="150" height="150" decoding="async">
-          <div class="qris-scan-line" id="qrisScanLine" aria-hidden="true"></div>
-        </div>
-        <div id="qrisFallback" class="qris-fallback">QRIS tidak dapat dimuat. Gunakan Order ID di atas untuk konfirmasi pembayaran.</div>
-        <div class="qris-frame-label">QRIS</div>
-        <div class="qris-frame-standard">QR Code Standar Pembayaran Nasional</div>
-        <div class="qris-frame-scan">Scan untuk Pembayaran</div>
-        <div class="qris-amount-box">
-          <div class="qris-amount-label">Jumlah Pembayaran</div>
-          <div id="qrisTotalAmount" class="qris-amount-val">Rp 0</div>
-        </div>
-      </div>
-      <div class="qris-frame-footer">
-        <div class="qris-frame-nmid">Pembayaran QRIS • Buzz Youth Fest</div>
-        <div class="qris-frame-methods" aria-hidden="true">
-          <i class="fa-solid fa-mobile-screen-button"></i>
-          <i class="fa-solid fa-wallet"></i>
-          <i class="fa-solid fa-building-columns"></i>
-        </div>
-      </div>
+    <section class="card empty-card" id="emptyCard" hidden aria-label="Pesanan tidak ditemukan">
+      <div class="empty-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></div>
+      <h2>Pesanan Tidak Ditemukan</h2>
+      <p>Data pesanan tidak valid atau sudah kedaluwarsa. Silakan pilih tiket kembali di halaman event.</p>
+      <a href="index.html" class="btn-home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Pilih Tiket Kembali</a>
     </section>
 
-    <div class="scan-hint">
-      <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
-      Scan dengan aplikasi e-wallet atau mobile banking
-    </div>
-
-    <section class="card" aria-label="Upload bukti pembayaran">
-      <label for="file" class="upload-label">
-        <div class="upload-area">
-          <span class="upload-icon"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i></span>
-          <h2>Upload Bukti Pembayaran</h2>
-          <p>Klik area ini untuk memilih bukti transfer QRIS</p>
-          <div class="file-types"><span>JPG</span><span>PNG</span><span>JPEG</span></div>
-        </div>
-        <input id="file" type="file" accept="image/*" class="input-sr">
-      </label>
-      <div id="preview" class="preview" aria-live="polite">
-        <img id="previewImg" alt="Preview bukti pembayaran">
-        <div id="fileName" class="file-name"></div>
-        <div class="success-msg"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Bukti pembayaran berhasil dipilih</div>
+    <section class="card success-card" id="successCard" hidden aria-label="Pembayaran dikonfirmasi">
+      <div class="success-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h2 class="success-title">Pembayaran Diterima!</h2>
+      <p class="success-sub">Terima kasih! Bukti pembayaran Anda telah kami terima dan sedang diverifikasi tim SnapTix. E-Ticket akan dikirim melalui WhatsApp dan email Anda.</p>
+      <div class="success-box">
+        <div class="srow"><span>Order ID</span><strong id="sCode">-</strong></div>
+        <div class="srow"><span>Tiket</span><strong id="sTiket">-</strong></div>
+        <div class="srow"><span>Sesi</span><strong id="sSesi">-</strong></div>
+        <div class="srow"><span>Jumlah</span><strong id="sJumlah">-</strong></div>
+        <div class="srow"><span>Total Bayar</span><strong id="sTotal">-</strong></div>
       </div>
-      <div class="checkbox-wrap">
-        <input type="checkbox" id="cek">
-        <label for="cek">Saya menyatakan telah melakukan pembayaran dan mengunggah bukti pembayaran yang valid.</label>
-      </div>
-      <button id="btn" type="button" class="submit-btn" disabled>
-        <i class="fa-solid fa-lock" aria-hidden="true"></i> KONFIRMASI PEMBAYARAN
-      </button>
+      <button type="button" class="btn-wa" id="waConfirm"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Konfirmasi via WhatsApp</button>
+      <a href="index.html" class="btn-home"><i class="fa-solid fa-house" aria-hidden="true"></i> Kembali ke Halaman Event</a>
     </section>
   </main>
+
+  <footer class="mini-footer">© 2026 SnapTix — Euphoria Life Festival 2027</footer>
 </div>
 
 <div id="loading" class="loading-overlay" role="dialog" aria-modal="true" aria-label="Memproses pembayaran" aria-hidden="true">
@@ -407,7 +463,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
       <div class="step-item"><div class="step-icon"><i class="fa-solid fa-circle-check"></i></div><div class="step-text">Finalisasi pesanan</div></div>
     </div>
     <div class="loading-bar-wrap"><div class="loading-bar" id="loadingBar"></div></div>
-    <div class="loading-time" id="loadingTime">00:00 / 03:00</div>
+    <div class="loading-time" id="loadingTime">00:00 / 00:09</div>
   </div>
 </div>
 
@@ -415,12 +471,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
 (() => {
 "use strict";
 
-const ORDER_ID_KEY = "buzz_order_id";
-const ORDER_SIG_KEY = "buzz_order_sig";
-const RECEIPT_KEY = "buzz_payment_receipt";
+const ORDER_ID_KEY = "snaptix_order_id";
+const ORDER_SIG_KEY = "snaptix_order_sig";
+const RECEIPT_KEY = "snaptix_payment_receipt";
 const TIMER_DURATION = 180;
-const LOADING_DURATION = 180000;
+const LOADING_DURATION = 9000;
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
+const WA_NUMBER = "6281234567890";
+const EVENT_NAME = "Euphoria Life Festival 2027";
 
 const $ = id => document.getElementById(id);
 const readStore = key => { try { return localStorage.getItem(key); } catch (err) { return null; } };
@@ -435,25 +493,50 @@ const cart = order.cart || {};
 const items = Array.isArray(cart.items) ? cart.items : [];
 const totalPrice = toFiniteNumber(cart.totalPrice);
 const totalQty = toFiniteNumber(cart.totalQty);
+const sesi = cart.sesi || "Sesi 1";
 const totalStr = "Rp " + totalPrice.toLocaleString("id-ID");
+const valid = totalPrice > 0 && totalQty > 0 && items.length > 0;
+
+const jenisText = items
+  .map(it => it && it.jenis ? it.jenis + " (" + toFiniteNumber(it.qty) + "x)" : "")
+  .filter(Boolean).join(", ") || "-";
 
 const orderSig = JSON.stringify([order.nama || "", order.wa || "", totalPrice, totalQty]);
 let orderId = readStore(ORDER_SIG_KEY) === orderSig ? readStore(ORDER_ID_KEY) : null;
-if (!orderId) {
-  orderId = "BYF-" + Date.now();
-  writeStore(ORDER_ID_KEY, orderId);
-  writeStore(ORDER_SIG_KEY, orderSig);
-}
+if (!orderId) orderId = order.kode || ("SMTX-" + Date.now().toString(36).toUpperCase());
+writeStore(ORDER_ID_KEY, orderId);
+writeStore(ORDER_SIG_KEY, orderSig);
 
 const orderIdEl = $("orderId"), totalEl = $("total"), qrisAmountEl = $("qrisTotalAmount"),
-      jenisEl = $("jenisTiket"), jumlahEl = $("jumlahTiket"), namaPemesanEl = $("namaPemesan"), waPemesanEl = $("waPemesan");
-orderIdEl.textContent = orderId;
-totalEl.textContent = totalStr;
-qrisAmountEl.textContent = totalStr;
-jenisEl.textContent = items.map(i => i && i.jenis).filter(Boolean).join(", ") || "-";
-jumlahEl.textContent = totalQty || 0;
-namaPemesanEl.textContent = order.nama || "-";
-waPemesanEl.textContent = order.wa || "-";
+      jenisEl = $("jenisTiket"), sesiEl = $("sesiTiket"), jumlahEl = $("jumlahTiket"),
+      namaPemesanEl = $("namaPemesan"), waPemesanEl = $("waPemesan"),
+      payArea = $("payArea"), emptyCard = $("emptyCard"), successCard = $("successCard"),
+      progressFill = $("progressFill"), progressBox = document.querySelector(".progress");
+
+if (!valid) {
+  payArea.hidden = true;
+  emptyCard.hidden = false;
+} else {
+  orderIdEl.textContent = orderId;
+  totalEl.textContent = totalStr;
+  qrisAmountEl.textContent = totalStr;
+  jenisEl.textContent = jenisText;
+  sesiEl.textContent = sesi;
+  jumlahEl.textContent = totalQty;
+  namaPemesanEl.textContent = order.nama || "-";
+  waPemesanEl.textContent = order.wa || "-";
+}
+
+const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const stepLis = document.querySelectorAll(".progress-steps .step");
+const setMainStep = n => {
+  stepLis.forEach((li, i) => {
+    li.classList.toggle("completed", i < n);
+    li.classList.toggle("active", i === n);
+    if (i === n) li.setAttribute("aria-current", "step");
+    else li.removeAttribute("aria-current");
+  });
+};
 
 const timerEl = $("timer");
 const deadline = Date.now() + TIMER_DURATION * 1000;
@@ -463,9 +546,9 @@ let isProcessing = false;
 const remainingSeconds = () => Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
 
 const startTimer = () => {
+  if (!valid || isProcessing) return;
   clearInterval(timerInterval);
   timerInterval = null;
-  if (isProcessing) return;
   const render = () => {
     const rem = remainingSeconds();
     timerEl.textContent = formatTime(rem);
@@ -544,6 +627,21 @@ const setStepStates = activeStep => {
 
 let activeUpdate = null, finished = false;
 
+const showSuccess = () => {
+  $("sCode").textContent = orderId;
+  $("sTiket").textContent = jenisText;
+  $("sSesi").textContent = sesi;
+  $("sJumlah").textContent = totalQty + " tiket";
+  $("sTotal").textContent = totalStr;
+  payArea.hidden = true;
+  successCard.hidden = false;
+  setMainStep(3);
+  progressFill.style.width = "100%";
+  progressBox.setAttribute("aria-valuenow", "4");
+  progressBox.setAttribute("aria-valuetext", "Langkah 4 dari 4: E-Ticket");
+  window.scrollTo({ top: 0, behavior: RM ? "auto" : "smooth" });
+};
+
 const startPremiumLoading = () => {
   isProcessing = true;
   finished = false;
@@ -589,7 +687,12 @@ const startPremiumLoading = () => {
     progressNum.textContent = 100;
     loadingBar.style.width = "100%";
     loadingSubtitle.textContent = "Pembayaran berhasil dikonfirmasi!";
-    setTimeout(() => { window.location.href = "pending.html"; }, 1000);
+    setTimeout(() => {
+      loadingOverlay.classList.remove("active");
+      loadingOverlay.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("no-scroll");
+      showSuccess();
+    }, 900);
   };
 
   activeUpdate = update;
@@ -601,14 +704,26 @@ loadingOverlay.addEventListener("keydown", e => {
 });
 
 btn.addEventListener("click", () => {
-  if (btn.disabled || isProcessing) return;
+  if (btn.disabled || isProcessing || !valid) return;
   startPremiumLoading();
+});
+
+ $("waConfirm").addEventListener("click", () => {
+  const msg =
+    "Halo SnapTix, saya telah melakukan pembayaran:\n\n" +
+    "Order ID : " + orderId + "\n" +
+    "Event    : " + EVENT_NAME + "\n" +
+    "Tiket    : " + jenisText + "\n" +
+    "Sesi     : " + sesi + "\n" +
+    "Total    : " + totalStr + "\n\n" +
+    "Bukti pembayaran telah diunggah. Mohon diverifikasi dan e-tiket dikirim. Terima kasih.";
+  window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
 });
 
 window.addEventListener("pageshow", e => {
   if (!e.persisted) return;
   if (isProcessing) {
-    if (finished) { window.location.href = "success.html"; return; }
+    if (finished) return;
     if (activeUpdate) requestAnimationFrame(activeUpdate);
     return;
   }
