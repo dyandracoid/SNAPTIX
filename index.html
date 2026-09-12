@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Euphoria Life Festival 2027 - SnapTix</title>
+
+<style>
+/* =========================================================
+   RESET
+========================================================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    background:#ffffff;
+    color:#111827;
+    line-height:1.6;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+:root{
+    --blue:#243f87;
+    --blue-dark:#172d68;
+    --blue-light:#eef3ff;
+    --text:#111827;
+    --muted:#667085;
+    --border:#e1e5ed;
+    --card:#ffffff;
+    --soft:#f5f7fb;
+    --green:#22c96b;
+    --green-dark:#129953;
+    --red:#dc2626;
+    --orange:#c86a08;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.top-header{
+    padding:24px 20px;
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.header-box{
+    max-width:1180px;
+    margin:auto;
+    min-height:92px;
+    padding:18px 28px;
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2f8,
+            #f8faff
+        );
+
+    box-shadow:
+        0 12px 30px rgba(31,41,55,.12);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.logo-mark{
+    width:50px;
+    height:50px;
+    position:relative;
+}
+
+.logo-mark:before{
+    content:"";
+    position:absolute;
+    width:25px;
+    height:42px;
+    background:linear-gradient(
+        145deg,
+        #3f3bdc,
+        #5146e5
+    );
+    border-radius:8px 20px 8px 20px;
+    transform:rotate(32deg);
+    left:8px;
+    top:2px;
+}
+
+.logo-mark:after{
+    content:"";
+    position:absolute;
+    width:24px;
+    height:25px;
+    background:#d7ef29;
+    border-radius:18px 5px 18px 5px;
+    transform:rotate(-30deg);
+    left:19px;
+    top:24px;
+}
+
+.logo-text{
+    font-size:42px;
+    line-height:1;
+    font-weight:800;
+    letter-spacing:-2px;
+    color:#493bd8;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.ticket-icon{
+    width:42px;
+    height:42px;
+    color:var(--blue);
+}
+
+.login-btn{
+    height:58px;
+    padding:0 28px;
+    border:1px solid #d5dce8;
+    border-radius:20px;
+    background:rgba(255,255,255,.25);
+    color:#171b25;
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.user-icon{
+    width:25px;
+    height:25px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+.container{
+    width:min(1180px, calc(100% - 32px));
+    margin:auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero{
+    margin-top:12px;
+}
+
+.hero-banner{
+    width:100%;
+    min-height:390px;
+    border-radius:26px;
+    overflow:hidden;
+    position:relative;
+
+    background:
+        radial-gradient(circle at 15% 30%, #ffdd78 0 4%, transparent 5%),
+        radial-gradient(circle at 80% 30%, #ffffff 0 2%, transparent 3%),
+        linear-gradient(
+            180deg,
+            #159bd5 0%,
+            #53c6e5 45%,
+            #a6e4ed 65%,
+            #80d56e 66%,
+            #4ba941 100%
+        );
+
+    box-shadow:
+        0 12px 28px rgba(20,35,70,.12);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-cloud{
+    position:absolute;
+    width:160px;
+    height:55px;
+    background:#fff;
+    opacity:.8;
+    border-radius:100px;
+    filter:blur(1px);
+}
+
+.cloud-1{
+    top:55px;
+    right:-20px;
+}
+
+.cloud-2{
+    top:110px;
+    left:-30px;
+    transform:scale(.7);
+}
+
+.cloud-3{
+    bottom:110px;
+    right:70px;
+    transform:scale(.55);
+}
+
+.hero-balloon{
+    position:absolute;
+    width:125px;
+    height:160px;
+    border-radius:50% 50% 45% 45%;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #f5b45b 0 14px,
+            #e84732 14px 27px,
+            #ffe2aa 27px 42px
+        );
+    left:30px;
+    top:30px;
+    transform:rotate(-4deg);
+    box-shadow:inset -12px 0 0 rgba(0,0,0,.08);
+}
+
+.hero-balloon:after{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:42px;
+    border-left:2px solid #8b6d49;
+    border-right:2px solid #8b6d49;
+    bottom:-36px;
+    left:45px;
+}
+
+.hero-wheel{
+    position:absolute;
+    width:155px;
+    height:155px;
+    border:10px solid #c65c40;
+    border-radius:50%;
+    right:30px;
+    bottom:20px;
+}
+
+.hero-wheel:before{
+    content:"";
+    position:absolute;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:#f5ad20;
+    left:55px;
+    top:55px;
+    box-shadow:
+        0 -55px 0 -9px #e28b39,
+        0 55px 0 -9px #e28b39,
+        55px 0 0 -9px #e28b39,
+        -55px 0 0 -9px #e28b39;
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    text-align:center;
+}
+
+.hero-small{
+    font-size:28px;
+    font-weight:900;
+    color:#fff;
+    letter-spacing:2px;
+    text-shadow:0 3px 0 rgba(0,0,0,.12);
+}
+
+.hero-title{
+    margin-top:-5px;
+    font-size:clamp(48px,8vw,105px);
+    line-height:.9;
+    font-weight:1000;
+    color:#fff;
+    letter-spacing:-5px;
+    text-shadow:
+        0 5px 0 #4e7088,
+        0 10px 15px rgba(0,0,0,.16);
+}
+
+.hero-life{
+    display:inline-block;
+    margin-top:15px;
+    padding:4px 15px;
+    background:#bce63a;
+    border-radius:8px;
+    color:#24458b;
+    font-size:30px;
+    font-weight:900;
+    transform:rotate(-2deg);
+}
+
+.hero-year{
+    color:#24458b;
+    font-weight:1000;
+    font-size:32px;
+    margin-left:8px;
+}
+
+/* =========================================================
+   EVENT TITLE
+========================================================= */
+.event-title{
+    padding:55px 0 20px;
+}
+
+.event-title h1{
+    font-size:clamp(34px,5vw,56px);
+    line-height:1.15;
+    color:#101828;
+    letter-spacing:-1.5px;
+}
+
+.category{
+    display:inline-block;
+    margin-top:25px;
+    padding:9px 24px;
+    border-radius:30px;
+    border:2px solid #dce8ff;
+    background:#f1f6ff;
+    color:#28447f;
+    font-weight:700;
+}
+
+/* =========================================================
+   ORGANIZER
+========================================================= */
+.organizer{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:30px;
+    padding:35px 25px;
+    border-bottom:1px solid #e1e5ed;
+}
+
+.organizer-info{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.organizer-logo{
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            #fff 0 18%,
+            transparent 19%
+        ),
+        linear-gradient(
+            145deg,
+            #213d9a,
+            #168fd0
+        );
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-weight:900;
+    font-size:22px;
+}
+
+.organizer-name small{
+    display:block;
+    color:#c4c9d3;
+    font-size:20px;
+}
+
+.organizer-name strong{
+    display:block;
+    font-size:22px;
+    color:#111827;
+}
+
+.social{
+    text-align:right;
+}
+
+.social-title{
+    color:#a3a9b5;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+}
+
+.social-icons a{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:900;
+    color:#fff;
+}
+
+.instagram{
+    background:linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+}
+
+.tiktok{
+    background:#050505;
+}
+
+/* =========================================================
+   INFO CARDS
+========================================================= */
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin:38px 0;
+}
+
+.info-card{
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:28px;
+    background:#fff;
+    box-shadow:0 4px 8px rgba(16,24,40,.06);
+}
+
+.info-heading{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:#687181;
+    font-weight:800;
+    font-size:22px;
+    letter-spacing:.5px;
+}
+
+.info-icon{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    background:#aebce2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#274384;
+}
+
+.info-value{
+    margin-top:14px;
+    font-size:24px;
+    color:#4d5665;
+}
+
+.map-link{
+    display:inline-block;
+    margin-top:18px;
+    color:#28447f;
+    font-weight:800;
+    text-decoration:none;
+}
+
+/* =========================================================
+   TABS
+========================================================= */
+.tabs{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    padding:8px 0 20px;
+    scrollbar-width:none;
+}
+
+.tabs::-webkit-scrollbar{
+    display:none;
+}
+
+.tab{
+    flex:none;
+    padding:15px 30px;
+    border:none;
+    border-radius:35px;
+    background:#e9ecf3;
+    color:#29427d;
+    font-size:18px;
+    font-weight:800;
+}
+
+.tab.active{
+    background:#263f83;
+    color:#fff;
+}
+
+/* =========================================================
+   DETAIL
+========================================================= */
+.content-section{
+    padding:45px 0;
+}
+
+.content-section h2{
+    font-size:42px;
+    color:#294581;
+    margin-bottom:25px;
+}
+
+.content-section p{
+    font-size:22px;
+    color:#414b5d;
+    margin-bottom:28px;
+    text-align:justify;
+}
+
+.quote{
+    font-size:25px !important;
+    font-weight:500;
+}
+
+/* =========================================================
+   TICKET SECTION
+========================================================= */
+.ticket-section{
+    padding:40px 0 60px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.section-heading h2{
+    font-size:42px;
+}
+
+.ticket-symbol{
+    color:#233e84;
+    font-size:42px;
+}
+
+.ticket-list{
+    display:grid;
+    gap:22px;
+}
+
+.ticket-card{
+    border:1px solid #e0e3e9;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:
+        0 5px 12px rgba(16,24,40,.08);
+}
+
+.ticket-top{
+    padding:26px;
+    background:
+        linear-gradient(
+            135deg,
+            #f2f4f9,
+            #fafbfe
+        );
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.ticket-name{
+    font-size:27px;
+    font-weight:900;
+    color:#111827;
+}
+
+.ticket-price{
+    margin-top:3px;
+    font-size:30px;
+    font-weight:900;
+    color:#294582;
+}
+
+.info-button{
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:10px;
+    background:#fff;
+    color:#294582;
+    font-size:25px;
+}
+
+.ticket-body{
+    padding:25px;
+}
+
+.session{
+    padding:17px;
+    border-radius:14px;
+    background:#fafbfc;
+    margin-bottom:12px;
+}
+
+.session strong{
+    display:block;
+    font-size:20px;
+}
+
+.session span{
+    display:block;
+    color:#586174;
+    font-size:17px;
+    margin-top:3px;
+}
+
+.ticket-status{
+    padding:20px;
+    margin-top:18px;
+    border-radius:13px;
+    text-align:center;
+    font-weight:900;
+    font-size:20px;
+}
+
+.open-sale{
+    background:#dcfce7;
+    color:#168447;
+}
+
+.sold-out{
+    background:#fee2e2;
+    color:#c51f1f;
+}
+
+.coming-soon{
+    background:#fff2f2;
+    color:#dc1111;
+}
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+.ticket-buy-area{
+    margin-top:22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.quantity-box{
+    display:flex;
+    align-items:center;
+    border:1px solid #d9dee8;
+    border-radius:15px;
+    overflow:hidden;
+    background:#fff;
+}
+
+.qty-btn{
+    width:52px;
+    height:52px;
+    border:none;
+    background:#edf1f8;
+    color:#253f81;
+    font-size:28px;
+    font-weight:700;
+}
+
+.qty-value{
+    min-width:55px;
+    text-align:center;
+    font-size:21px;
+    font-weight:900;
+}
+
+.buy-button{
+    min-height:55px;
+    padding:0 28px;
+    border:none;
+    border-radius:15px;
+    background:#243f87;
+    color:#fff;
+    font-size:18px;
+    font-weight:900;
+    transition:.2s;
+}
+
+.buy-button:hover{
+    background:#182f6e;
+    transform:translateY(-1px);
+}
+
+.buy-button:disabled{
+    background:#cbd1dc;
+    cursor:not-allowed;
+}
+
+.total-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid #e4e7ec;
+}
+
+.total-label{
+    color:#667085;
+    font-size:17px;
+}
+
+.total-price{
+    color:#243f87;
+    font-size:25px;
+    font-weight:900;
+}
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+.help-box{
+    margin:40px 0;
+    padding:30px;
+    border:2px solid #b6f1d3;
+    border-radius:25px;
+    background:#f3fffa;
+}
+
+.help-top{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.whatsapp-icon{
+    width:65px;
+    height:65px;
+    border-radius:18px;
+    background:#27d36a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:33px;
+}
+
+.help-title{
+    font-size:24px;
+    font-weight:900;
+    color:#073e30;
+}
+
+.help-text{
+    font-size:18px;
+    color:#126451;
+}
+
+.whatsapp-button{
+    width:100%;
+    margin-top:24px;
+    padding:17px;
+    border:none;
+    border-radius:18px;
+    background:#25d366;
+    color:#fff;
+    font-size:20px;
+    font-weight:900;
+}
+
+/* =========================================================
+   OTHER EVENTS
+========================================================= */
+.other-events{
+    border-top:1px solid #ddd;
+    padding:60px 0;
+}
+
+.other-events h2{
+    font-size:38px;
+    margin-bottom:35px;
+}
+
+.events-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+}
+
+.other-card{
+    border:1px solid #e0e4ea;
+    border-radius:22px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 5px 14px rgba(16,24,40,.06);
+}
+
+.other-image{
+    height:190px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            #239ed0,
+            #54c7e5
+        );
+    color:#fff;
+    text-align:center;
+    font-size:28px;
+    font-weight:900;
+    padding:20px;
+}
+
+.other-image.run{
+    background:
+        linear-gradient(
+            135deg,
+            #d9c8ad,
+            #eee1c9
+        );
+    color:#3c3027;
+}
+
+.other-body{
+    padding:25px;
+}
+
+.other-body h3{
+    font-size:27px;
+    margin-bottom:20px;
+}
+
+.other-meta{
+    display:flex;
+    gap:13px;
+    margin:15px 0;
+    color:#596375;
+    font-size:18px;
+}
+
+.other-buy{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:13px;
+    background:#243f87;
+    color:#fff;
+    font-size:18px;
+    font-weight:900;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer{
+    margin-top:30px;
+    background:#101827;
+    color:#fff;
+    padding:70px 0 0;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:60px;
+    padding-bottom:70px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:46px;
+    font-weight:900;
+}
+
+.footer-logo-mark{
+    width:50px;
+    height:50px;
+    position:relative;
+}
+
+.footer-logo-mark:before{
+    content:"";
+    position:absolute;
+    width:25px;
+    height:43px;
+    background:#fff;
+    border-radius:8px 20px 8px 20px;
+    transform:rotate(32deg);
+}
+
+.footer-description{
+    margin-top:30px;
+    max-width:510px;
+    color:#aeb6c5;
+    font-size:20px;
+}
+
+.footer-social{
+    display:flex;
+    gap:25px;
+    margin-top:35px;
+}
+
+.footer-social a{
+    color:#d9dfeb;
+    font-size:30px;
+    text-decoration:none;
+}
+
+.footer-column h3{
+    font-size:28px;
+    margin-bottom:22px;
+    padding-bottom:18px;
+    border-bottom:2px solid #3a4354;
+}
+
+.footer-column a{
+    display:block;
+    color:#cbd2df;
+    text-decoration:none;
+    font-size:18px;
+    margin:20px 0;
+}
+
+.footer-bottom{
+    border-top:2px solid #3b4353;
+    padding:35px 0 55px;
+    text-align:center;
+    color:#aeb6c5;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+    margin-top:25px;
+}
+
+.footer-links a{
+    color:#aeb6c5;
+    text-decoration:none;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(10,18,35,.65);
+    z-index:2000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(500px,100%);
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.modal-box h3{
+    font-size:28px;
+    color:#1e3470;
+    margin-bottom:15px;
+}
+
+.modal-summary{
+    padding:18px;
+    background:#f5f7fb;
+    border-radius:15px;
+    margin:20px 0;
+}
+
+.modal-total{
+    display:flex;
+    justify-content:space-between;
+    font-size:21px;
+    font-weight:900;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:22px;
+}
+
+.modal-close{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:13px;
+    background:#e8ebf1;
+    color:#243f87;
+    font-weight:800;
+}
+
+.modal-confirm{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:13px;
+    background:#243f87;
+    color:#fff;
+    font-weight:800;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media(max-width:800px){
+
+    .top-header{
+        padding:12px 16px;
+    }
+
+    .header-box{
+        min-height:76px;
+        padding:13px 18px;
+        border-radius:24px;
+    }
+
+    .logo-mark{
+        width:42px;
+        height:42px;
+    }
+
+    .logo-text{
+        font-size:31px;
+    }
+
+    .ticket-icon{
+        display:none;
+    }
+
+    .login-btn{
+        height:50px;
+        padding:0 17px;
+        font-size:16px;
+        border-radius:16px;
+    }
+
+    .hero-banner{
+        min-height:270px;
+        border-radius:20px;
+    }
+
+    .hero-balloon{
+        width:80px;
+        height:110px;
+        left:10px;
+        top:15px;
+    }
+
+    .hero-wheel{
+        width:90px;
+        height:90px;
+        right:8px;
+    }
+
+    .hero-wheel:before{
+        left:28px;
+        top:28px;
+    }
+
+    .hero-small{
+        font-size:16px;
+    }
+
+    .hero-title{
+        font-size:55px;
+        letter-spacing:-3px;
+    }
+
+    .hero-life{
+        font-size:19px;
+        padding:3px 9px;
+    }
+
+    .hero-year{
+        font-size:19px;
+    }
+
+    .event-title{
+        padding-top:35px;
+    }
+
+    .event-title h1{
+        font-size:35px;
+    }
+
+    .organizer{
+        grid-template-columns:1fr;
+        padding:25px 0;
+    }
+
+    .organizer-logo{
+        width:75px;
+        height:75px;
+    }
+
+    .social{
+        text-align:left;
+    }
+
+    .social-icons{
+        justify-content:flex-start;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .content-section h2,
+    .section-heading h2{
+        font-size:32px;
+    }
+
+    .content-section p{
+        font-size:19px;
+        text-align:left;
+    }
+
+    .ticket-name{
+        font-size:22px;
+    }
+
+    .ticket-price{
+        font-size:25px;
+    }
+
+    .ticket-top{
+        padding:20px;
+    }
+
+    .ticket-body{
+        padding:18px;
+    }
+
+    .ticket-buy-area{
+        align-items:stretch;
+        flex-direction:column;
+    }
+
+    .quantity-box{
+        width:100%;
+        justify-content:space-between;
+    }
+
+    .qty-btn{
+        width:60px;
+    }
+
+    .buy-button{
+        width:100%;
+    }
+
+    .events-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .footer-links{
+        flex-direction:column;
+        gap:15px;
+    }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+@media(max-width:420px){
+
+    .container{
+        width:calc(100% - 24px);
+    }
+
+    .logo-text{
+        font-size:27px;
+    }
+
+    .login-btn{
+        padding:0 13px;
+    }
+
+    .hero-title{
+        font-size:46px;
+    }
+
+    .hero-banner{
+        min-height:240px;
+    }
+
+    .info-card{
+        padding:20px;
+    }
+
+    .ticket-status{
+        font-size:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+<header class="top-header">
+
+    <div class="header-box">
+
+        <a href="#" class="logo">
+
+            <div class="logo-mark"></div>
+
+            <div class="logo-text">
+                snaptix
+            </div>
+
+        </a>
+
+        <div class="header-actions">
+
+            <div class="ticket-icon">
+                🎟️
+            </div>
+
+            <button class="login-btn" onclick="loginAlert()">
+                <svg class="user-icon" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="7" r="4"
+                        stroke="currentColor"
+                        stroke-width="1.7"/>
+                    <path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"/>
+                </svg>
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+<main>
+
+<div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-banner">
+
+            <div class="hero-cloud cloud-1"></div>
+            <div class="hero-cloud cloud-2"></div>
+            <div class="hero-cloud cloud-3"></div>
+
+            <div class="hero-balloon"></div>
+
+            <div class="hero-wheel"></div>
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    SKY MULTI CREATIVE
+                </div>
+
+                <div class="hero-title">
+                    Euphoria
+                </div>
+
+                <div>
+                    <span class="hero-life">
+                        LIFE FESTIVAL
+                    </span>
+
+                    <span class="hero-year">
+                        2027
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENT TITLE -->
+    <section class="event-title">
+
+        <h1>
+            Euphoria Life Festival 2027
+        </h1>
+
+        <span class="category">
+            Festival
+        </span>
+
+    </section>
+
+
+    <!-- ORGANIZER -->
+    <section class="organizer">
+
+        <div class="organizer-info">
+
+            <div class="organizer-logo">
+                SMC
+            </div>
+
+            <div class="organizer-name">
+                <small>Penyelenggara</small>
+                <strong>SMC Creator</strong>
+            </div>
+
+        </div>
+
+        <div class="social">
+
+            <div class="social-title">
+                Sosial Media
+            </div>
+
+            <div class="social-icons">
+
+                <a href="#"
+                   class="instagram"
+                   aria-label="Instagram">
+                    ◎
+                </a>
+
+                <a href="#"
+                   class="tiktok"
+                   aria-label="TikTok">
+                    ♪
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+    <section class="info-grid">
+
+        <div class="info-card">
+
+            <div class="info-heading">
+
+                <div class="info-icon">
+                    📍
+                </div>
+
+                LOKASI
+
+            </div>
+
+            <div class="info-value">
+                BANDUNG
+            </div>
+
+            <a href="#"
+               class="map-link">
+                📍 Peta
+            </a>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-heading">
+
+                <div class="info-icon">
+                    📅
+                </div>
+
+                JADWAL EVENT
+
+            </div>
+
+            <div class="ticket-status coming-soon"
+                 style="display:inline-block;padding:8px 18px;margin-top:14px;">
+                Coming Soon
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TABS -->
+    <div class="tabs">
+
+        <button class="tab active"
+                onclick="showTab('detail',this)">
+            Detail Event
+        </button>
+
+        <button class="tab"
+                onclick="showTab('venue',this)">
+            Venue
+        </button>
+
+        <button class="tab"
+                onclick="showTab('guest',this)">
+            Guest Star
+        </button>
+
+        <button class="tab"
+                onclick="showTab('faq',this)">
+            FAQ
+        </button>
+
+    </div>
+
+
+    <!-- DETAIL -->
+    <section id="detail"
+             class="content-section tab-content">
+
+        <h2>
+            Tentang Experience Ini
+        </h2>
+
+        <p class="quote">
+            "Welcome to Euphoria Land - The City
+            That Never Stops Playing."
+        </p>
+
+        <p>
+            Euphoria Land adalah sebuah kota festival
+            yang dibangun untuk merayakan musik, budaya,
+            kreativitas, dan kebersamaan dalam satu
+            pengalaman yang menyeluruh.
+        </p>
+
+        <p>
+            Setiap sudut Euphoria Land memiliki cerita
+            dan karakter tersendiri. Pengunjung dapat
+            menikmati pertunjukan musik, mengeksplorasi
+            berbagai aktivitas, berbelanja produk kreatif,
+            berinteraksi dengan komunitas, hingga menemukan
+            ruang untuk bersantai dan menikmati suasana
+            festival.
+        </p>
+
+        <p>
+            Seluruh elemen tersebut dirancang menjadi satu
+            ekosistem yang hidup dan saling terhubung,
+            menciptakan ruang bagi setiap orang untuk
+            menikmati pengalaman festival dengan cara
+            mereka sendiri.
+        </p>
+
+    </section>
+
+
+    <!-- VENUE -->
+    <section id="venue"
+             class="content-section tab-content"
+             style="display:none;">
+
+        <h2>
+            Venue
+        </h2>
+
+        <p>
+            Euphoria Life Festival 2027 akan
+            diselenggarakan di Bandung.
+        </p>
+
+        <div class="info-card">
+
+            <div class="info-heading">
+                📍
+                Lokasi Festival
+            </div>
+
+            <div class="info-value">
+                Bandung, Jawa Barat
+            </div>
+
+            <a href="#"
+               class="map-link">
+                Buka Peta →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- GUEST -->
+    <section id="guest"
+             class="content-section tab-content"
+             style="display:none;">
+
+        <h2>
+            Guest Star
+        </h2>
+
+        <p>
+            Guest star dan line-up akan diumumkan
+            secara bertahap oleh penyelenggara.
+        </p>
+
+        <div class="ticket-status coming-soon">
+            LINE UP COMING SOON
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq"
+             class="content-section tab-content"
+             style="display:none;">
+
+        <h2>
+            FAQ
+        </h2>
+
+        <div class="info-card">
+
+            <h3>
+                Apakah tiket sudah bisa dibeli?
+            </h3>
+
+            <p style="margin-top:10px;">
+                Ya. Tiket yang berstatus OPEN SALE
+                dapat dipilih dan dibeli.
+            </p>
+
+        </div>
+
+        <br>
+
+        <div class="info-card">
+
+            <h3>
+                Apakah tiket bisa dikembalikan?
+            </h3>
+
+            <p style="margin-top:10px;">
+                Kebijakan refund mengikuti ketentuan
+                penyelenggara event.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         TICKET
+    ================================================== -->
+    <section class="ticket-section">
+
+        <div class="section-heading">
+
+            <div class="ticket-symbol">
+                🎟️
+            </div>
+
+            <h2>
+                Tiket
+            </h2>
+
+        </div>
+
+
+        <div class="ticket-list">
+
+
+            <!-- TICKET 1 -->
+            <div class="ticket-card">
+
+                <div class="ticket-top">
+
+                    <div>
+
+                        <div class="ticket-name">
+                            Early Bird Festival
+                        </div>
+
+                        <div class="ticket-price">
+                            Rp 150.000
+                        </div>
+
+                    </div>
+
+                    <button class="info-button"
+                            onclick="showTicketInfo('Early Bird Festival')">
+                        ⓘ
+                    </button>
+
+                </div>
+
+
+                <div class="ticket-body">
+
+                    <div class="session">
+
+                        <strong>
+                            Sesi 1
+                        </strong>
+
+                        <span>
+                            📅 13:00 – 23:30 WIB
+                        </span>
+
+                    </div>
+
+                    <div class="session">
+
+                        <strong>
+                            Sesi 2
+                        </strong>
+
+                        <span>
+                            📅 13:00 – 23:30 WIB
+                        </span>
+
+                    </div>
+
+
+                    <!-- OPEN SALE -->
+                    <div class="ticket-status open-sale">
+                        🟢 OPEN SALE
+                    </div>
+
+
+                    <!-- QUANTITY -->
+                    <div class="ticket-buy-area">
+
+                        <div class="quantity-box">
+
+                            <button class="qty-btn"
+                                    onclick="changeQty('festival',-1)">
+                                −
+                            </button>
+
+                            <div class="qty-value"
+                                 id="qty-festival">
+                                0
+                            </div>
+
+                            <button class="qty-btn"
+                                    onclick="changeQty('festival',1)">
+                                +
+                            </button>
+
+                        </div>
+
+                        <button class="buy-button"
+                                onclick="buyTicket('festival')">
+                            Beli Tiket
+                        </button>
+
+                    </div>
+
+
+                    <div class="total-row">
+
+                        <span class="total-label">
+                            Total
+                        </span>
+
+                        <span class="total-price"
+                              id="total-festival">
+                            Rp 0
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TICKET 2 -->
+            <div class="ticket-card">
+
+                <div class="ticket-top">
+
+                    <div>
+
+                        <div class="ticket-name">
+                            Early Bird VIP
+                        </div>
+
+                        <div class="ticket-price">
+                            Rp 250.000
+                        </div>
+
+                    </div>
+
+                    <button class="info-button"
+                            onclick="showTicketInfo('Early Bird VIP')">
+                        ⓘ
+                    </button>
+
+                </div>
+
+
+                <div class="ticket-body">
+
+                    <div class="session">
+
+                        <strong>
+                            Sesi 1
+                        </strong>
+
+                        <span>
+                            📅 13:00 – 23:30 WIB
+                        </span>
+
+                    </div>
+
+                    <div class="session">
+
+                        <strong>
+                            Sesi 2
+                        </strong>
+
+                        <span>
+                            📅 13:00 – 23:30 WIB
+                        </span>
+
+                    </div>
+
+
+                    <!-- OPEN SALE -->
+                    <div class="ticket-status open-sale">
+                        🟢 OPEN SALE
+                    </div>
+
+
+                    <div class="ticket-buy-area">
+
+                        <div class="quantity-box">
+
+                            <button class="qty-btn"
+                                    onclick="changeQty('vip',-1)">
+                                −
+                            </button>
+
+                            <div class="qty-value"
+                                 id="qty-vip">
+                                0
+                            </div>
+
+                            <button class="qty-btn"
+                                    onclick="changeQty('vip',1)">
+                                +
+                            </button>
+
+                        </div>
+
+                        <button class="buy-button"
+                                onclick="buyTicket('vip')">
+                            Beli Tiket
+                        </button>
+
+                    </div>
+
+
+                    <div class="total-row">
+
+                        <span class="total-label">
+                            Total
+                        </span>
+
+                        <span class="total-price"
+                              id="total-vip">
+                            Rp 0
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         WHATSAPP
+    ================================================== -->
+    <section class="help-box">
+
+        <div class="help-top">
+
+            <div class="whatsapp-icon">
+                ☎
+            </div>
+
+            <div>
+
+                <div class="help-title">
+                    Butuh Bantuan Tiket / Event?
+                </div>
+
+                <div class="help-text">
+                    Hubungi layanan bantuan resmi
+                    SnapTix via WhatsApp
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="whatsapp-button"
+                onclick="openWhatsApp()">
+            Hubungi via WhatsApp
+        </button>
+
+    </section>
+
+
+    <!-- ==================================================
+         OTHER EVENTS
+    ================================================== -->
+    <section class="other-events">
+
+        <h2>
+            Event Lainnya
+        </h2>
+
+        <div class="events-grid">
+
+
+            <div class="other-card">
+
+                <div class="other-image">
+                    RUANG<br>
+                    BERMUSIK<br>
+                    2027
+                </div>
+
+                <div class="other-body">
+
+                    <h3>
+                        Ruang Bermusik
+                    </h3>
+
+                    <div class="other-meta">
+                        📅
+                        <span>
+                            9 Januari 2027
+                        </span>
+                    </div>
+
+                    <div class="other-meta">
+                        📍
+                        <span>
+                            Lanud Wiriadinata
+                        </span>
+                    </div>
+
+                    <button class="other-buy">
+                        Beli Tiket
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="other-card">
+
+                <div class="other-image run">
+
+                    BUAHBATU<br>
+                    EQUALS RUN<br>
+                    2026
+
+                </div>
+
+                <div class="other-body">
+
+                    <h3>
+                        Buahbatu Equals Run
+                    </h3>
+
+                    <div class="other-meta">
+                        📅
+                        <span>
+                            26 Desember 2026
+                        </span>
+                    </div>
+
+                    <div class="other-meta">
+                        📍
+                        <span>
+                            Podomoro Park
+                        </span>
+                    </div>
+
+                    <button class="other-buy">
+                        Beli Tiket
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</div>
+
+</main>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+<footer>
+
+<div class="container">
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="footer-logo">
+
+                <div class="footer-logo-mark"></div>
+
+                snaptix
+
+            </div>
+
+            <div class="footer-description">
+
+                Snaptix membantu pembeli menemukan
+                tiket event dan penyelenggara mengelola
+                penjualan tiket secara digital.
+
+            </div>
+
+            <div class="footer-social">
+
+                <a href="#">◉</a>
+                <a href="#">◎</a>
+                <a href="#">in</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Jelajahi Snaptix
+            </h3>
+
+            <a href="#">
+                Tentang Snaptix
+            </a>
+
+            <a href="#">
+                Cari Event
+            </a>
+
+            <a href="#">
+                Panduan Penyelenggara
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Bantuan
+            </h3>
+
+            <a href="#">
+                Hubungi Snaptix
+            </a>
+
+            <a href="#">
+                Informasi Penyelenggara
+            </a>
+
+            <h3 style="margin-top:45px;">
+                Kebijakan
+            </h3>
+
+            <a href="#">
+                Syarat dan Ketentuan
+            </a>
+
+            <a href="#">
+                Kebijakan Privasi
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Snaptix. All rights reserved.
+
+        <div class="footer-links">
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Terms of Service
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</footer>
+
+
+<!-- ======================================================
+     MODAL
+====================================================== -->
+<div class="modal"
+     id="purchaseModal">
+
+    <div class="modal-box">
+
+        <h3>
+            Konfirmasi Tiket
+        </h3>
+
+        <div class="modal-summary">
+
+            <div id="modalTicketName">
+                -
+            </div>
+
+            <div id="modalTicketQty">
+                Jumlah: 0
+            </div>
+
+        </div>
+
+        <div class="modal-total">
+
+            <span>
+                Total
+            </span>
+
+            <span id="modalTotal">
+                Rp 0
+            </span>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button class="modal-close"
+                    onclick="closeModal()">
+                Batal
+            </button>
+
+            <button class="modal-confirm"
+                    onclick="confirmPurchase()">
+                Lanjutkan
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+/* =========================================================
+   DATA TIKET
+========================================================= */
+
+const tickets = {
+
+    festival:{
+        name:"Early Bird Festival",
+        price:150000,
+        qty:0,
+        max:10
+    },
+
+    vip:{
+        name:"Early Bird VIP",
+        price:250000,
+        qty:0,
+        max:10
+    }
+
+};
+
+
+/* =========================================================
+   FORMAT RUPIAH
+========================================================= */
+
+function rupiah(number){
+
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style:"currency",
+            currency:"IDR",
+            maximumFractionDigits:0
+        }
+    ).format(number);
+
+}
+
+
+/* =========================================================
+   QUANTITY +/- 
+========================================================= */
+
+function changeQty(type,amount){
+
+    const ticket = tickets[type];
+
+    let newQty = ticket.qty + amount;
+
+    if(newQty < 0){
+        newQty = 0;
+    }
+
+    if(newQty > ticket.max){
+
+        alert(
+            "Maksimal pembelian " +
+            ticket.max +
+            " tiket."
+        );
+
+        newQty = ticket.max;
+    }
+
+    ticket.qty = newQty;
+
+    document.getElementById(
+        "qty-" + type
+    ).textContent = newQty;
+
+    document.getElementById(
+        "total-" + type
+    ).textContent =
+        rupiah(ticket.qty * ticket.price);
+
+}
+
+
+/* =========================================================
+   BUY TICKET
+========================================================= */
+
+let selectedTicket = null;
+
+function buyTicket(type){
+
+    const ticket = tickets[type];
+
+    if(ticket.qty <= 0){
+
+        alert(
+            "Silakan pilih jumlah tiket terlebih dahulu menggunakan tombol +."
+        );
+
+        return;
+    }
+
+    selectedTicket = type;
+
+    document.getElementById(
+        "modalTicketName"
+    ).textContent = ticket.name;
+
+    document.getElementById(
+        "modalTicketQty"
+    ).textContent =
+        "Jumlah: " + ticket.qty + " tiket";
+
+    document.getElementById(
+        "modalTotal"
+    ).textContent =
+        rupiah(ticket.qty * ticket.price);
+
+    document.getElementById(
+        "purchaseModal"
+    ).classList.add("show");
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
+function closeModal(){
+
+    document.getElementById(
+        "purchaseModal"
+    ).classList.remove("show");
+
+}
+
+
+/* =========================================================
+   CONFIRM PURCHASE
+========================================================= */
+
+function confirmPurchase(){
+
+    if(!selectedTicket){
+        return;
+    }
+
+    const ticket =
+        tickets[selectedTicket];
+
+    const message =
+        "Halo SnapTix, saya ingin membeli tiket " +
+        ticket.name +
+        " sebanyak " +
+        ticket.qty +
+        " tiket. Total " +
+        rupiah(ticket.qty * ticket.price) +
+        ".";
+
+    const phone =
+        "6281234567890";
+
+    const url =
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        encodeURIComponent(message);
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+    closeModal();
+
+}
+
+
+/* =========================================================
+   WHATSAPP BANTUAN
+========================================================= */
+
+function openWhatsApp(){
+
+    const phone =
+        "6281234567890";
+
+    const message =
+        "Halo SnapTix, saya membutuhkan bantuan terkait tiket/event Euphoria Life Festival 2027.";
+
+    window.open(
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+
+}
+
+
+/* =========================================================
+   TICKET INFO
+========================================================= */
+
+function showTicketInfo(name){
+
+    alert(
+        name +
+        "\n\n" +
+        "Status: OPEN SALE\n" +
+        "Waktu: 13:00 – 23:30 WIB\n" +
+        "Maksimal pembelian: 10 tiket"
+    );
+
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+function loginAlert(){
+
+    alert(
+        "Halaman Login SnapTix\n\n" +
+        "Silakan hubungkan tombol ini " +
+        "ke halaman login Anda."
+    );
+
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+function showTab(tabId,button){
+
+    const contents =
+        document.querySelectorAll(
+            ".tab-content"
+        );
+
+    contents.forEach(function(content){
+
+        content.style.display =
+            "none";
+
+    });
+
+
+    document.getElementById(
+        tabId
+    ).style.display = "block";
+
+
+    const buttons =
+        document.querySelectorAll(
+            ".tab"
+        );
+
+    buttons.forEach(function(btn){
+
+        btn.classList.remove(
+            "active"
+        );
+
+    });
+
+
+    button.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICK OUTSIDE
+========================================================= */
+
+document.getElementById(
+    "purchaseModal"
+).addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
