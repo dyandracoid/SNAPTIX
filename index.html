@@ -3,2476 +3,656 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Euphoria Life Festival 2027 - SnapTix</title>
-
+<meta name="description" content="Tiket resmi Euphoria Life Festival 2027 di Bandung. Penjualan tiket Sesi 1 telah dibuka di SnapTix.">
+<meta name="theme-color" content="#0e1626">
+<title>Euphoria Life Festival 2027 — SnapTix</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎟️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* =========================================================
-   RESET
-========================================================= */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:
-        "Inter",
-        "Segoe UI",
-        Arial,
-        sans-serif;
-    background:#ffffff;
-    color:#111827;
-    line-height:1.6;
-}
-
-button,
-input{
-    font-family:inherit;
-}
-
-button{
-    cursor:pointer;
-}
-
-/* =========================================================
-   VARIABLES
-========================================================= */
 :root{
-    --blue:#243f87;
-    --blue-dark:#172d68;
-    --blue-light:#eef3ff;
-    --text:#111827;
-    --muted:#667085;
-    --border:#e1e5ed;
-    --card:#ffffff;
-    --soft:#f5f7fb;
-    --green:#22c96b;
-    --green-dark:#129953;
-    --red:#dc2626;
-    --orange:#c86a08;
-}
-
-/* =========================================================
-   HEADER
-========================================================= */
-.top-header{
-    padding:24px 20px;
-    background:#fff;
-    position:sticky;
-    top:0;
-    z-index:999;
-}
-
-.header-box{
-    max-width:1180px;
-    margin:auto;
-    min-height:92px;
-    padding:18px 28px;
-    border-radius:28px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef2f8,
-            #f8faff
-        );
-
-    box-shadow:
-        0 12px 30px rgba(31,41,55,.12);
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-}
-
-.logo-mark{
-    width:50px;
-    height:50px;
-    position:relative;
-}
-
-.logo-mark:before{
-    content:"";
-    position:absolute;
-    width:25px;
-    height:42px;
-    background:linear-gradient(
-        145deg,
-        #3f3bdc,
-        #5146e5
-    );
-    border-radius:8px 20px 8px 20px;
-    transform:rotate(32deg);
-    left:8px;
-    top:2px;
-}
-
-.logo-mark:after{
-    content:"";
-    position:absolute;
-    width:24px;
-    height:25px;
-    background:#d7ef29;
-    border-radius:18px 5px 18px 5px;
-    transform:rotate(-30deg);
-    left:19px;
-    top:24px;
-}
-
-.logo-text{
-    font-size:42px;
-    line-height:1;
-    font-weight:800;
-    letter-spacing:-2px;
-    color:#493bd8;
-}
-
-.header-actions{
-    display:flex;
-    align-items:center;
-    gap:24px;
-}
-
-.ticket-icon{
-    width:42px;
-    height:42px;
-    color:var(--blue);
-}
-
-.login-btn{
-    height:58px;
-    padding:0 28px;
-    border:1px solid #d5dce8;
-    border-radius:20px;
-    background:rgba(255,255,255,.25);
-    color:#171b25;
-    font-size:18px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.user-icon{
-    width:25px;
-    height:25px;
-}
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-.container{
-    width:min(1180px, calc(100% - 32px));
-    margin:auto;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-.hero{
-    margin-top:12px;
-}
-
-.hero-banner{
-    width:100%;
-    min-height:390px;
-    border-radius:26px;
-    overflow:hidden;
-    position:relative;
-
-    background:
-        radial-gradient(circle at 15% 30%, #ffdd78 0 4%, transparent 5%),
-        radial-gradient(circle at 80% 30%, #ffffff 0 2%, transparent 3%),
-        linear-gradient(
-            180deg,
-            #159bd5 0%,
-            #53c6e5 45%,
-            #a6e4ed 65%,
-            #80d56e 66%,
-            #4ba941 100%
-        );
-
-    box-shadow:
-        0 12px 28px rgba(20,35,70,.12);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.hero-cloud{
-    position:absolute;
-    width:160px;
-    height:55px;
-    background:#fff;
-    opacity:.8;
-    border-radius:100px;
-    filter:blur(1px);
-}
-
-.cloud-1{
-    top:55px;
-    right:-20px;
-}
-
-.cloud-2{
-    top:110px;
-    left:-30px;
-    transform:scale(.7);
-}
-
-.cloud-3{
-    bottom:110px;
-    right:70px;
-    transform:scale(.55);
-}
-
-.hero-balloon{
-    position:absolute;
-    width:125px;
-    height:160px;
-    border-radius:50% 50% 45% 45%;
-    background:
-        repeating-linear-gradient(
-            90deg,
-            #f5b45b 0 14px,
-            #e84732 14px 27px,
-            #ffe2aa 27px 42px
-        );
-    left:30px;
-    top:30px;
-    transform:rotate(-4deg);
-    box-shadow:inset -12px 0 0 rgba(0,0,0,.08);
-}
-
-.hero-balloon:after{
-    content:"";
-    position:absolute;
-    width:34px;
-    height:42px;
-    border-left:2px solid #8b6d49;
-    border-right:2px solid #8b6d49;
-    bottom:-36px;
-    left:45px;
-}
-
-.hero-wheel{
-    position:absolute;
-    width:155px;
-    height:155px;
-    border:10px solid #c65c40;
-    border-radius:50%;
-    right:30px;
-    bottom:20px;
-}
-
-.hero-wheel:before{
-    content:"";
-    position:absolute;
-    width:25px;
-    height:25px;
-    border-radius:50%;
-    background:#f5ad20;
-    left:55px;
-    top:55px;
-    box-shadow:
-        0 -55px 0 -9px #e28b39,
-        0 55px 0 -9px #e28b39,
-        55px 0 0 -9px #e28b39,
-        -55px 0 0 -9px #e28b39;
-}
-
-.hero-content{
-    position:relative;
-    z-index:5;
-    text-align:center;
-}
-
-.hero-small{
-    font-size:28px;
-    font-weight:900;
-    color:#fff;
-    letter-spacing:2px;
-    text-shadow:0 3px 0 rgba(0,0,0,.12);
-}
-
-.hero-title{
-    margin-top:-5px;
-    font-size:clamp(48px,8vw,105px);
-    line-height:.9;
-    font-weight:1000;
-    color:#fff;
-    letter-spacing:-5px;
-    text-shadow:
-        0 5px 0 #4e7088,
-        0 10px 15px rgba(0,0,0,.16);
-}
-
-.hero-life{
-    display:inline-block;
-    margin-top:15px;
-    padding:4px 15px;
-    background:#bce63a;
-    border-radius:8px;
-    color:#24458b;
-    font-size:30px;
-    font-weight:900;
-    transform:rotate(-2deg);
-}
-
-.hero-year{
-    color:#24458b;
-    font-weight:1000;
-    font-size:32px;
-    margin-left:8px;
-}
-
-/* =========================================================
-   EVENT TITLE
-========================================================= */
-.event-title{
-    padding:55px 0 20px;
-}
-
-.event-title h1{
-    font-size:clamp(34px,5vw,56px);
-    line-height:1.15;
-    color:#101828;
-    letter-spacing:-1.5px;
-}
-
-.category{
-    display:inline-block;
-    margin-top:25px;
-    padding:9px 24px;
-    border-radius:30px;
-    border:2px solid #dce8ff;
-    background:#f1f6ff;
-    color:#28447f;
-    font-weight:700;
-}
-
-/* =========================================================
-   ORGANIZER
-========================================================= */
-.organizer{
-    display:grid;
-    grid-template-columns:1fr auto;
-    align-items:center;
-    gap:30px;
-    padding:35px 25px;
-    border-bottom:1px solid #e1e5ed;
-}
-
-.organizer-info{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
-
-.organizer-logo{
-    width:95px;
-    height:95px;
-    border-radius:50%;
-    background:
-        radial-gradient(
-            circle,
-            #fff 0 18%,
-            transparent 19%
-        ),
-        linear-gradient(
-            145deg,
-            #213d9a,
-            #168fd0
-        );
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    font-weight:900;
-    font-size:22px;
-}
-
-.organizer-name small{
-    display:block;
-    color:#c4c9d3;
-    font-size:20px;
-}
-
-.organizer-name strong{
-    display:block;
-    font-size:22px;
-    color:#111827;
-}
-
-.social{
-    text-align:right;
-}
-
-.social-title{
-    color:#a3a9b5;
-    font-size:20px;
-    margin-bottom:8px;
-}
-
-.social-icons{
-    display:flex;
-    justify-content:flex-end;
-    gap:12px;
-}
-
-.social-icons a{
-    width:48px;
-    height:48px;
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:24px;
-    font-weight:900;
-    color:#fff;
-}
-
-.instagram{
-    background:linear-gradient(
-        135deg,
-        #833ab4,
-        #fd1d1d,
-        #fcb045
-    );
-}
-
-.tiktok{
-    background:#050505;
-}
-
-/* =========================================================
-   INFO CARDS
-========================================================= */
-.info-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:24px;
-    margin:38px 0;
-}
-
-.info-card{
-    border:1px solid var(--border);
-    border-radius:24px;
-    padding:28px;
-    background:#fff;
-    box-shadow:0 4px 8px rgba(16,24,40,.06);
-}
-
-.info-heading{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    color:#687181;
-    font-weight:800;
-    font-size:22px;
-    letter-spacing:.5px;
-}
-
-.info-icon{
-    width:43px;
-    height:43px;
-    border-radius:50%;
-    background:#aebce2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#274384;
-}
-
-.info-value{
-    margin-top:14px;
-    font-size:24px;
-    color:#4d5665;
-}
-
-.map-link{
-    display:inline-block;
-    margin-top:18px;
-    color:#28447f;
-    font-weight:800;
-    text-decoration:none;
-}
-
-/* =========================================================
-   TABS
-========================================================= */
-.tabs{
-    display:flex;
-    gap:12px;
-    overflow-x:auto;
-    padding:8px 0 20px;
-    scrollbar-width:none;
-}
-
-.tabs::-webkit-scrollbar{
-    display:none;
-}
-
-.tab{
-    flex:none;
-    padding:15px 30px;
-    border:none;
-    border-radius:35px;
-    background:#e9ecf3;
-    color:#29427d;
-    font-size:18px;
-    font-weight:800;
-}
-
-.tab.active{
-    background:#263f83;
-    color:#fff;
-}
-
-/* =========================================================
-   DETAIL
-========================================================= */
-.content-section{
-    padding:45px 0;
-}
-
-.content-section h2{
-    font-size:42px;
-    color:#294581;
-    margin-bottom:25px;
-}
-
-.content-section p{
-    font-size:22px;
-    color:#414b5d;
-    margin-bottom:28px;
-    text-align:justify;
-}
-
-.quote{
-    font-size:25px !important;
-    font-weight:500;
-}
-
-/* =========================================================
-   TICKET SECTION
-========================================================= */
-.ticket-section{
-    padding:40px 0 60px;
-}
-
-.section-heading{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:30px;
-}
-
-.section-heading h2{
-    font-size:42px;
-}
-
-.ticket-symbol{
-    color:#233e84;
-    font-size:42px;
-}
-
-.ticket-list{
-    display:grid;
-    gap:22px;
-}
-
-.ticket-card{
-    border:1px solid #e0e3e9;
-    border-radius:20px;
-    overflow:hidden;
-    background:#fff;
-    box-shadow:
-        0 5px 12px rgba(16,24,40,.08);
-}
-
-.ticket-top{
-    padding:26px;
-    background:
-        linear-gradient(
-            135deg,
-            #f2f4f9,
-            #fafbfe
-        );
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:15px;
-}
-
-.ticket-name{
-    font-size:27px;
-    font-weight:900;
-    color:#111827;
-}
-
-.ticket-price{
-    margin-top:3px;
-    font-size:30px;
-    font-weight:900;
-    color:#294582;
-}
-
-.info-button{
-    width:58px;
-    height:58px;
-    border:none;
-    border-radius:10px;
-    background:#fff;
-    color:#294582;
-    font-size:25px;
-}
-
-.ticket-body{
-    padding:25px;
-}
-
-.session{
-    padding:17px;
-    border-radius:14px;
-    background:#fafbfc;
-    margin-bottom:12px;
-}
-
-.session strong{
-    display:block;
-    font-size:20px;
-}
-
-.session span{
-    display:block;
-    color:#586174;
-    font-size:17px;
-    margin-top:3px;
-}
-
-.ticket-status{
-    padding:20px;
-    margin-top:18px;
-    border-radius:13px;
-    text-align:center;
-    font-weight:900;
-    font-size:20px;
-}
-
-.open-sale{
-    background:#dcfce7;
-    color:#168447;
-}
-
-.sold-out{
-    background:#fee2e2;
-    color:#c51f1f;
-}
-
-.coming-soon{
-    background:#fff2f2;
-    color:#dc1111;
-}
-
-/* =========================================================
-   QUANTITY
-========================================================= */
-.ticket-buy-area{
-    margin-top:22px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.quantity-box{
-    display:flex;
-    align-items:center;
-    border:1px solid #d9dee8;
-    border-radius:15px;
-    overflow:hidden;
-    background:#fff;
-}
-
-.qty-btn{
-    width:52px;
-    height:52px;
-    border:none;
-    background:#edf1f8;
-    color:#253f81;
-    font-size:28px;
-    font-weight:700;
-}
-
-.qty-value{
-    min-width:55px;
-    text-align:center;
-    font-size:21px;
-    font-weight:900;
-}
-
-.buy-button{
-    min-height:55px;
-    padding:0 28px;
-    border:none;
-    border-radius:15px;
-    background:#243f87;
-    color:#fff;
-    font-size:18px;
-    font-weight:900;
-    transition:.2s;
-}
-
-.buy-button:hover{
-    background:#182f6e;
-    transform:translateY(-1px);
-}
-
-.buy-button:disabled{
-    background:#cbd1dc;
-    cursor:not-allowed;
-}
-
-.total-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:20px;
-    padding-top:20px;
-    border-top:1px solid #e4e7ec;
-}
-
-.total-label{
-    color:#667085;
-    font-size:17px;
-}
-
-.total-price{
-    color:#243f87;
-    font-size:25px;
-    font-weight:900;
-}
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
-.help-box{
-    margin:40px 0;
-    padding:30px;
-    border:2px solid #b6f1d3;
-    border-radius:25px;
-    background:#f3fffa;
-}
-
-.help-top{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.whatsapp-icon{
-    width:65px;
-    height:65px;
-    border-radius:18px;
-    background:#27d36a;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    font-size:33px;
-}
-
-.help-title{
-    font-size:24px;
-    font-weight:900;
-    color:#073e30;
-}
-
-.help-text{
-    font-size:18px;
-    color:#126451;
-}
-
-.whatsapp-button{
-    width:100%;
-    margin-top:24px;
-    padding:17px;
-    border:none;
-    border-radius:18px;
-    background:#25d366;
-    color:#fff;
-    font-size:20px;
-    font-weight:900;
-}
-
-/* =========================================================
-   OTHER EVENTS
-========================================================= */
-.other-events{
-    border-top:1px solid #ddd;
-    padding:60px 0;
-}
-
-.other-events h2{
-    font-size:38px;
-    margin-bottom:35px;
-}
-
-.events-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-}
-
-.other-card{
-    border:1px solid #e0e4ea;
-    border-radius:22px;
-    overflow:hidden;
-    background:#fff;
-    box-shadow:0 5px 14px rgba(16,24,40,.06);
-}
-
-.other-image{
-    height:190px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:
-        linear-gradient(
-            135deg,
-            #239ed0,
-            #54c7e5
-        );
-    color:#fff;
-    text-align:center;
-    font-size:28px;
-    font-weight:900;
-    padding:20px;
-}
-
-.other-image.run{
-    background:
-        linear-gradient(
-            135deg,
-            #d9c8ad,
-            #eee1c9
-        );
-    color:#3c3027;
-}
-
-.other-body{
-    padding:25px;
-}
-
-.other-body h3{
-    font-size:27px;
-    margin-bottom:20px;
-}
-
-.other-meta{
-    display:flex;
-    gap:13px;
-    margin:15px 0;
-    color:#596375;
-    font-size:18px;
-}
-
-.other-buy{
-    margin-top:20px;
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:13px;
-    background:#243f87;
-    color:#fff;
-    font-size:18px;
-    font-weight:900;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-footer{
-    margin-top:30px;
-    background:#101827;
-    color:#fff;
-    padding:70px 0 0;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr;
-    gap:60px;
-    padding-bottom:70px;
-}
-
-.footer-logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-size:46px;
-    font-weight:900;
-}
-
-.footer-logo-mark{
-    width:50px;
-    height:50px;
-    position:relative;
-}
-
-.footer-logo-mark:before{
-    content:"";
-    position:absolute;
-    width:25px;
-    height:43px;
-    background:#fff;
-    border-radius:8px 20px 8px 20px;
-    transform:rotate(32deg);
-}
-
-.footer-description{
-    margin-top:30px;
-    max-width:510px;
-    color:#aeb6c5;
-    font-size:20px;
-}
-
-.footer-social{
-    display:flex;
-    gap:25px;
-    margin-top:35px;
-}
-
-.footer-social a{
-    color:#d9dfeb;
-    font-size:30px;
-    text-decoration:none;
-}
-
-.footer-column h3{
-    font-size:28px;
-    margin-bottom:22px;
-    padding-bottom:18px;
-    border-bottom:2px solid #3a4354;
-}
-
-.footer-column a{
-    display:block;
-    color:#cbd2df;
-    text-decoration:none;
-    font-size:18px;
-    margin:20px 0;
-}
-
-.footer-bottom{
-    border-top:2px solid #3b4353;
-    padding:35px 0 55px;
-    text-align:center;
-    color:#aeb6c5;
-}
-
-.footer-links{
-    display:flex;
-    justify-content:center;
-    gap:70px;
-    margin-top:25px;
-}
-
-.footer-links a{
-    color:#aeb6c5;
-    text-decoration:none;
-}
-
-/* =========================================================
-   MODAL
-========================================================= */
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(10,18,35,.65);
-    z-index:2000;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-box{
-    width:min(500px,100%);
-    background:#fff;
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 25px 70px rgba(0,0,0,.25);
-}
-
-.modal-box h3{
-    font-size:28px;
-    color:#1e3470;
-    margin-bottom:15px;
-}
-
-.modal-summary{
-    padding:18px;
-    background:#f5f7fb;
-    border-radius:15px;
-    margin:20px 0;
-}
-
-.modal-total{
-    display:flex;
-    justify-content:space-between;
-    font-size:21px;
-    font-weight:900;
-}
-
-.modal-actions{
-    display:flex;
-    gap:10px;
-    margin-top:22px;
-}
-
-.modal-close{
-    flex:1;
-    padding:14px;
-    border:none;
-    border-radius:13px;
-    background:#e8ebf1;
-    color:#243f87;
-    font-weight:800;
-}
-
-.modal-confirm{
-    flex:1;
-    padding:14px;
-    border:none;
-    border-radius:13px;
-    background:#243f87;
-    color:#fff;
-    font-weight:800;
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-@media(max-width:800px){
-
-    .top-header{
-        padding:12px 16px;
-    }
-
-    .header-box{
-        min-height:76px;
-        padding:13px 18px;
-        border-radius:24px;
-    }
-
-    .logo-mark{
-        width:42px;
-        height:42px;
-    }
-
-    .logo-text{
-        font-size:31px;
-    }
-
-    .ticket-icon{
-        display:none;
-    }
-
-    .login-btn{
-        height:50px;
-        padding:0 17px;
-        font-size:16px;
-        border-radius:16px;
-    }
-
-    .hero-banner{
-        min-height:270px;
-        border-radius:20px;
-    }
-
-    .hero-balloon{
-        width:80px;
-        height:110px;
-        left:10px;
-        top:15px;
-    }
-
-    .hero-wheel{
-        width:90px;
-        height:90px;
-        right:8px;
-    }
-
-    .hero-wheel:before{
-        left:28px;
-        top:28px;
-    }
-
-    .hero-small{
-        font-size:16px;
-    }
-
-    .hero-title{
-        font-size:55px;
-        letter-spacing:-3px;
-    }
-
-    .hero-life{
-        font-size:19px;
-        padding:3px 9px;
-    }
-
-    .hero-year{
-        font-size:19px;
-    }
-
-    .event-title{
-        padding-top:35px;
-    }
-
-    .event-title h1{
-        font-size:35px;
-    }
-
-    .organizer{
-        grid-template-columns:1fr;
-        padding:25px 0;
-    }
-
-    .organizer-logo{
-        width:75px;
-        height:75px;
-    }
-
-    .social{
-        text-align:left;
-    }
-
-    .social-icons{
-        justify-content:flex-start;
-    }
-
-    .info-grid{
-        grid-template-columns:1fr;
-    }
-
-    .content-section h2,
-    .section-heading h2{
-        font-size:32px;
-    }
-
-    .content-section p{
-        font-size:19px;
-        text-align:left;
-    }
-
-    .ticket-name{
-        font-size:22px;
-    }
-
-    .ticket-price{
-        font-size:25px;
-    }
-
-    .ticket-top{
-        padding:20px;
-    }
-
-    .ticket-body{
-        padding:18px;
-    }
-
-    .ticket-buy-area{
-        align-items:stretch;
-        flex-direction:column;
-    }
-
-    .quantity-box{
-        width:100%;
-        justify-content:space-between;
-    }
-
-    .qty-btn{
-        width:60px;
-    }
-
-    .buy-button{
-        width:100%;
-    }
-
-    .events-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .footer-links{
-        flex-direction:column;
-        gap:15px;
-    }
-}
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-@media(max-width:420px){
-
-    .container{
-        width:calc(100% - 24px);
-    }
-
-    .logo-text{
-        font-size:27px;
-    }
-
-    .login-btn{
-        padding:0 13px;
-    }
-
-    .hero-title{
-        font-size:46px;
-    }
-
-    .hero-banner{
-        min-height:240px;
-    }
-
-    .info-card{
-        padding:20px;
-    }
-
-    .ticket-status{
-        font-size:17px;
-    }
+    --navy:#1f3a7a;
+    --navy-dark:#16294f;
+    --ink:#141b2d;
+    --muted:#5f6b81;
+    --border:#e5e9f2;
+    --soft:#f7f9fc;
+    --green:#168447;
+    --green-bg:#e3f6ec;
+    --amber:#b45309;
+    --amber-bg:#fdf3dd;
+    --red:#c02626;
+    --red-bg:#fdecec;
+    --radius:16px;
+    --shadow:0 8px 24px rgba(20,27,45,.08);
+    --font:"Poppins","Segoe UI",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:15.5px;background:#fff;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2.5px solid #7b97e8;outline-offset:2px;border-radius:6px}
+.container{width:min(1120px,calc(100% - 32px));margin-inline:auto}
+section{scroll-margin-top:150px}
+
+.site-header{position:sticky;top:0;z-index:1000;padding:12px 0 8px}
+.header-box{background:linear-gradient(135deg,#edf1f9,#f9fbff);border-radius:20px;box-shadow:0 10px 28px rgba(20,27,45,.12);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;font-size:25px;font-weight:700;letter-spacing:-1px;color:#4f46e5}
+.logo-mark{width:32px;height:32px;position:relative;flex:none}
+.logo-mark:before{content:"";position:absolute;width:16px;height:27px;background:linear-gradient(145deg,#4f46e5,#6d64f0);border-radius:5px 13px 5px 13px;transform:rotate(32deg);left:5px;top:1px}
+.logo-mark:after{content:"";position:absolute;width:15px;height:16px;background:#d7ef29;border-radius:11px 3px 11px 3px;transform:rotate(-30deg);left:13px;top:15px}
+.header-actions{display:flex;align-items:center;gap:16px}
+.header-ticket svg{width:30px;height:30px;color:var(--navy);display:block}
+.login-btn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 20px;border:1.5px solid #d7deeb;border-radius:13px;background:#fff;color:var(--ink);font-size:14.5px;font-weight:500;transition:.2s}
+.login-btn:hover{border-color:var(--navy);color:var(--navy)}
+.login-btn svg{width:17px;height:17px}
+
+.banner{margin-top:6px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#159bd5,#53c6e5 55%,#80d56e);box-shadow:var(--shadow)}
+.banner img{width:100%;aspect-ratio:21/9;object-fit:cover}
+
+.event-title{padding:30px 0 4px}
+.event-title h1{font-size:clamp(25px,3.8vw,38px);font-weight:700;letter-spacing:-1px;line-height:1.2;color:#182035}
+.category{display:inline-block;margin-top:14px;padding:7px 20px;border-radius:100px;background:#e9eefb;color:var(--navy);font-weight:600;font-size:14px}
+
+.organizer{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:22px 0 24px;border-bottom:1px solid var(--border);margin-top:10px}
+.organizer-id{display:flex;align-items:center;gap:14px}
+.organizer-avatar{width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#3f8fd8,#1b57b0 72%);color:#fff;display:grid;place-items:center;text-align:center;font-size:8px;font-weight:700;letter-spacing:.4px;line-height:1.3;flex:none}
+.organizer-id small{display:block;color:#a3abbd;font-size:13.5px}
+.organizer-id strong{display:block;font-size:17px;font-weight:600;color:#1c2438;letter-spacing:-.2px}
+.social{text-align:right}
+.social small{display:block;color:#a3abbd;font-size:13.5px;margin-bottom:8px}
+.social-icons{display:flex;gap:10px;justify-content:flex-end}
+.social-icons a{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:#fff;transition:transform .2s}
+.social-icons a:hover{transform:translateY(-2px)}
+.social-icons svg{width:19px;height:19px}
+.si-ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)}
+.si-tt{background:#010101}
+
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0 8px}
+.info-card{border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;background:#fff}
+.info-heading{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#4a5568}
+.info-icon{width:36px;height:36px;border-radius:50%;background:#dfe7f7;color:var(--navy);display:grid;place-items:center;flex:none}
+.info-icon svg{width:17px;height:17px}
+.info-value{margin:12px 0 0;font-size:17px;font-weight:600;letter-spacing:.3px;color:#252d42}
+.map-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;color:var(--navy);font-weight:600;font-size:14px;text-decoration:none}
+.map-link:hover{text-decoration:underline}
+.map-link svg{width:14px;height:14px}
+.chip{display:inline-block;margin-top:12px;padding:7px 16px;border-radius:10px;font-weight:600;font-size:14px}
+.chip-soon{background:var(--amber-bg);color:var(--amber)}
+
+.tabs-wrap{position:sticky;top:84px;z-index:900;background:#fff;padding:14px 0 10px}
+.tabs{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;padding:9px 22px;border-radius:100px;background:#e9edf6;color:var(--navy);font-size:14px;font-weight:600;transition:.2s}
+.tab:hover{background:#dde4f2}
+.tab.active{background:var(--navy);color:#fff}
+
+.tab-content{display:none}
+.tab-content.active{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tab-panel{padding:26px 0 8px}
+.tab-panel h2{font-size:22px;font-weight:700;letter-spacing:-.4px;color:var(--navy);margin-bottom:14px}
+.tab-panel p{font-size:15.5px;color:#3d465c;margin-bottom:14px;text-align:justify}
+.tab-panel .lead{color:#232c44;font-weight:500}
+.panel-card{border:1px solid var(--border);border-radius:14px;padding:16px 18px;background:#fff;max-width:620px}
+.panel-card+.panel-card{margin-top:12px}
+.panel-card h3{font-size:15.5px;font-weight:600;margin-bottom:4px}
+.panel-card p{margin:0;text-align:left;font-size:14.5px;color:var(--muted)}
+
+.section-head{display:flex;align-items:center;gap:12px;padding:34px 0 18px}
+.section-head svg{width:30px;height:30px;color:var(--navy);flex:none}
+.section-head h2{font-size:26px;font-weight:700;letter-spacing:-.6px;color:var(--navy)}
+
+.ticket-list{display:grid;gap:18px}
+.ticket-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:0 3px 12px rgba(20,27,45,.06)}
+.ticket-top{padding:16px 18px;background:linear-gradient(135deg,#eef1f8,#fafbfe);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ticket-name{font-size:18px;font-weight:700;letter-spacing:-.2px;color:#1b2337}
+.ticket-price{margin-top:2px;font-size:19px;font-weight:700;color:var(--navy)}
+.info-button{width:42px;height:42px;border-radius:11px;background:#fff;color:var(--navy);display:grid;place-items:center;flex:none;box-shadow:0 2px 8px rgba(20,27,45,.08);transition:background .2s}
+.info-button:hover{background:#e9eefb}
+.info-button svg{width:18px;height:18px}
+.ticket-body{padding:16px 18px 18px}
+.session{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;border-radius:11px;background:var(--soft);margin-bottom:10px}
+.session strong{display:block;font-size:14.5px;font-weight:600;color:#212a40}
+.session .session-time{display:flex;align-items:center;gap:7px;color:#5a6478;font-size:13.5px;margin-top:2px}
+.session .session-time svg{width:14px;height:14px;color:var(--navy);flex:none}
+.session.is-soon{background:#f4f5f8}
+.session.is-soon strong,.session.is-soon .session-time{color:#8b94a8}
+.session.is-soon .session-time svg{color:#8b94a8}
+.session-badge{flex:none;padding:5px 12px;border-radius:100px;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.badge-open{background:var(--green-bg);color:var(--green)}
+.badge-soon{background:var(--red-bg);color:var(--red)}
+.ticket-status{padding:12px;border-radius:11px;text-align:center;font-weight:700;font-size:14px;letter-spacing:1.2px;text-transform:uppercase}
+.status-available{background:var(--green-bg);color:var(--green)}
+.ticket-buy-area{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.quantity-box{display:flex;align-items:center;border:1.5px solid #dbe1ec;border-radius:11px;overflow:hidden;background:#fff}
+.qty-btn{width:38px;height:40px;font-size:19px;font-weight:600;color:var(--navy);display:grid;place-items:center;transition:background .15s}
+.qty-btn:hover{background:#eef2fa}
+.qty-value{min-width:40px;text-align:center;font-size:15px;font-weight:600}
+.qty-label{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px;display:block}
+.buy-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 24px;border-radius:12px;background:var(--navy);color:#fff;font-size:14.5px;font-weight:600;transition:.2s;box-shadow:0 5px 14px rgba(31,58,122,.3)}
+.buy-button:hover{background:var(--navy-dark);transform:translateY(-1px)}
+.buy-button svg{width:16px;height:16px}
+.total-row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
+.total-row span{color:var(--muted);font-size:13.5px}
+.total-row strong{color:var(--navy);font-size:17px;font-weight:700}
+
+.help-box{margin:30px 0;padding:20px 22px;border:1.5px solid #c9edd9;border-radius:16px;background:#f2fbf6;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.help-left{display:flex;align-items:center;gap:14px}
+.help-icon{width:46px;height:46px;border-radius:12px;background:#25d366;display:grid;place-items:center;color:#fff;flex:none}
+.help-icon svg{width:24px;height:24px}
+.help-title{font-size:16px;font-weight:700;color:#0b3d2c}
+.help-text{font-size:13.5px;color:#177352}
+.help-box .buy-button{background:#25d366;box-shadow:0 5px 14px rgba(37,211,102,.35)}
+.help-box .buy-button:hover{background:#1fb857}
+
+.other-events{border-top:1px solid var(--border);padding:34px 0 48px}
+.other-events h2{font-size:22px;font-weight:700;letter-spacing:-.4px;color:#182035;margin-bottom:20px}
+.events-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.other-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 2px 10px rgba(20,27,45,.05);transition:.2s;display:flex;flex-direction:column}
+.other-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.other-image{height:120px;display:grid;place-items:center;text-align:center;color:#fff;font-size:17px;font-weight:700;line-height:1.35;padding:12px}
+.oi-blue{background:linear-gradient(135deg,#1f6fb2,#43b0dd)}
+.oi-sand{background:linear-gradient(135deg,#b99a6b,#e0c9a2);color:#3a2e1f}
+.other-body{padding:16px;display:flex;flex-direction:column;flex:1}
+.other-body h3{font-size:16.5px;font-weight:600;letter-spacing:-.2px}
+.other-meta{display:flex;align-items:center;gap:8px;margin-top:8px;color:#5a6478;font-size:13.5px}
+.other-meta svg{width:14px;height:14px;color:var(--navy);flex:none}
+.other-buy{margin-top:14px;width:100%;height:40px;border-radius:10px;background:var(--navy);color:#fff;font-size:14px;font-weight:600;transition:.2s}
+.other-buy:hover{background:var(--navy-dark)}
+
+.site-footer{margin-top:10px;background:#0e1626;color:#fff;padding:44px 0 0;overflow:hidden}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:40px}
+.footer-logo{display:inline-flex;align-items:center;gap:10px;font-size:30px;font-weight:700;letter-spacing:-1px;color:#fff;text-decoration:none}
+.footer-logo .logo-mark:before{background:#fff}
+.footer-desc{margin-top:18px;max-width:380px;color:#98a2b8;font-size:14px}
+.footer-social{display:flex;gap:12px;margin-top:20px}
+.footer-social a{width:38px;height:38px;border-radius:10px;border:1px solid #263149;display:grid;place-items:center;color:#c2cadb;transition:.2s}
+.footer-social a:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.footer-social svg{width:17px;height:17px}
+.footer-col h3{font-size:17px;font-weight:700;padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid #263149}
+.footer-col h3+h3{margin-top:28px}
+.footer-col a{display:block;color:#c2cadb;text-decoration:none;font-size:14px;padding:8px 0;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid #202b42;padding:22px 0 8px;text-align:center;color:#98a2b8;font-size:13.5px}
+.footer-links{display:flex;justify-content:center;gap:32px;margin-top:12px;flex-wrap:wrap}
+.footer-links a{color:#98a2b8;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-watermark{font-size:clamp(72px,15vw,220px);font-weight:700;letter-spacing:2px;line-height:.68;text-align:center;color:rgba(255,255,255,.055);user-select:none;pointer-events:none;transform:translateY(24%)}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);background:var(--ink);color:#fff;padding:12px 22px;border-radius:12px;font-size:14px;font-weight:500;opacity:0;pointer-events:none;transition:.3s;z-index:3000;box-shadow:0 12px 30px rgba(0,0,0,.35);max-width:calc(100% - 40px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:760px){
+    .site-header{padding:10px 0 6px}
+    .header-box{padding:9px 14px;border-radius:16px}
+    .logo{font-size:21px}
+    .logo-mark{width:28px;height:28px}
+    .logo-mark:before{width:14px;height:24px;left:4px}
+    .logo-mark:after{width:13px;height:14px;left:11px;top:13px}
+    .header-ticket{display:none}
+    .login-btn{height:40px;padding:0 16px;font-size:13.5px}
+    .banner{border-radius:14px}
+    .banner img{aspect-ratio:16/9}
+    .event-title{padding-top:24px}
+    .organizer{flex-direction:column;align-items:flex-start}
+    .social{text-align:left}
+    .social-icons{justify-content:flex-start}
+    .info-grid{grid-template-columns:1fr}
+    .tabs-wrap{top:74px}
+    .session{align-items:flex-start;flex-direction:column;gap:8px}
+    .ticket-buy-area{flex-direction:column;align-items:stretch}
+    .quantity-box{justify-content:space-between}
+    .buy-button{width:100%}
+    .events-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr;gap:32px}
+    section{scroll-margin-top:140px}
+}
+@media(prefers-reduced-motion:reduce){
+    *,*:before,*:after{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ======================================================
-     HEADER
-====================================================== -->
-<header class="top-header">
-
-    <div class="header-box">
-
-        <a href="#" class="logo">
-
-            <div class="logo-mark"></div>
-
-            <div class="logo-text">
+<header class="site-header">
+    <div class="container">
+        <div class="header-box">
+            <a href="#" class="logo" aria-label="SnapTix">
+                <span class="logo-mark" aria-hidden="true"></span>
                 snaptix
+            </a>
+            <div class="header-actions">
+                <span class="header-ticket" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 8.6C3 7.7 3.7 7 4.6 7h14.8c.9 0 1.6.7 1.6 1.6v1.2a2.2 2.2 0 0 0 0 4.4v1.2c0 .9-.7 1.6-1.6 1.6H4.6c-.9 0-1.6-.7-1.6-1.6v-1.2a2.2 2.2 0 0 0 0-4.4V8.6Z"/><path d="M14.5 7v10" stroke="#edf1f9" stroke-width="1.5" stroke-dasharray="2.4 2.4"/></svg>
+                </span>
+                <button class="login-btn" type="button" id="loginBtn">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M4.8 20c.6-3.5 3.7-5.2 7.2-5.2s6.6 1.7 7.2 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    Login
+                </button>
             </div>
-
-        </a>
-
-        <div class="header-actions">
-
-            <div class="ticket-icon">
-                🎟️
-            </div>
-
-            <button class="login-btn" onclick="loginAlert()">
-                <svg class="user-icon" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="7" r="4"
-                        stroke="currentColor"
-                        stroke-width="1.7"/>
-                    <path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"
-                        stroke="currentColor"
-                        stroke-width="1.7"
-                        stroke-linecap="round"/>
-                </svg>
-                Login
-            </button>
-
         </div>
-
     </div>
-
 </header>
 
-
-<!-- ======================================================
-     MAIN
-====================================================== -->
 <main>
-
 <div class="container">
 
-    <!-- HERO -->
-    <section class="hero">
+    <div class="banner">
+        <img src="banner.png" alt="Euphoria Life Festival 2027" onerror="this.style.display='none'">
+    </div>
 
-        <div class="hero-banner">
-
-            <div class="hero-cloud cloud-1"></div>
-            <div class="hero-cloud cloud-2"></div>
-            <div class="hero-cloud cloud-3"></div>
-
-            <div class="hero-balloon"></div>
-
-            <div class="hero-wheel"></div>
-
-            <div class="hero-content">
-
-                <div class="hero-small">
-                    SKY MULTI CREATIVE
-                </div>
-
-                <div class="hero-title">
-                    Euphoria
-                </div>
-
-                <div>
-                    <span class="hero-life">
-                        LIFE FESTIVAL
-                    </span>
-
-                    <span class="hero-year">
-                        2027
-                    </span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EVENT TITLE -->
     <section class="event-title">
-
-        <h1>
-            Euphoria Life Festival 2027
-        </h1>
-
-        <span class="category">
-            Festival
-        </span>
-
+        <h1>Euphoria Life Festival 2027</h1>
+        <span class="category">Festival</span>
     </section>
 
-
-    <!-- ORGANIZER -->
-    <section class="organizer">
-
-        <div class="organizer-info">
-
-            <div class="organizer-logo">
-                SMC
-            </div>
-
-            <div class="organizer-name">
+    <section class="organizer" aria-label="Penyelenggara event">
+        <div class="organizer-id">
+            <div class="organizer-avatar" aria-hidden="true">SKY MULTI<br>CREATIVE</div>
+            <div>
                 <small>Penyelenggara</small>
                 <strong>SMC Creator</strong>
             </div>
-
         </div>
-
         <div class="social">
-
-            <div class="social-title">
-                Sosial Media
-            </div>
-
+            <small>Sosial Media</small>
             <div class="social-icons">
-
-                <a href="#"
-                   class="instagram"
-                   aria-label="Instagram">
-                    ◎
+                <a href="https://www.instagram.com" class="si-ig" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.8" stroke="currentColor" stroke-width="1.9"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>
                 </a>
-
-                <a href="#"
-                   class="tiktok"
-                   aria-label="TikTok">
-                    ♪
+                <a href="https://www.tiktok.com" class="si-tt" target="_blank" rel="noopener" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.2 1.8 3.6 4 3.9v3c-1.5 0-2.9-.5-4-1.3v5.9a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.8V3h3Z"/></svg>
                 </a>
-
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- INFORMATION -->
-    <section class="info-grid">
-
+    <section class="info-grid" aria-label="Informasi lokasi dan jadwal">
         <div class="info-card">
-
             <div class="info-heading">
-
-                <div class="info-icon">
-                    📍
-                </div>
-
-                LOKASI
-
+                <span class="info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg>
+                </span>
+                Lokasi
             </div>
-
-            <div class="info-value">
-                BANDUNG
-            </div>
-
-            <a href="#"
-               class="map-link">
-                📍 Peta
+            <div class="info-value">BANDUNG</div>
+            <a href="https://maps.google.com/?q=Bandung" class="map-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="2"/></svg>
+                Peta
             </a>
-
         </div>
-
-
         <div class="info-card">
-
             <div class="info-heading">
-
-                <div class="info-icon">
-                    📅
-                </div>
-
-                JADWAL EVENT
-
+                <span class="info-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                Jadwal Event
             </div>
-
-            <div class="ticket-status coming-soon"
-                 style="display:inline-block;padding:8px 18px;margin-top:14px;">
-                Coming Soon
-            </div>
-
+            <span class="chip chip-soon">Coming Soon</span>
         </div>
-
     </section>
 
-
-    <!-- TABS -->
-    <div class="tabs">
-
-        <button class="tab active"
-                onclick="showTab('detail',this)">
-            Detail Event
-        </button>
-
-        <button class="tab"
-                onclick="showTab('venue',this)">
-            Venue
-        </button>
-
-        <button class="tab"
-                onclick="showTab('guest',this)">
-            Guest Star
-        </button>
-
-        <button class="tab"
-                onclick="showTab('faq',this)">
-            FAQ
-        </button>
-
+    <div class="tabs-wrap">
+        <nav class="tabs" role="tablist" aria-label="Informasi event">
+            <button class="tab active" type="button" role="tab" id="tab-detail" aria-selected="true" aria-controls="detail" data-target="detail">Detail Event</button>
+            <button class="tab" type="button" role="tab" id="tab-venue" aria-selected="false" aria-controls="venue" data-target="venue">Venue</button>
+            <button class="tab" type="button" role="tab" id="tab-guest" aria-selected="false" aria-controls="guest" data-target="guest">Guest Star</button>
+            <button class="tab" type="button" role="tab" id="tab-faq" aria-selected="false" aria-controls="faq" data-target="faq">FAQ</button>
+        </nav>
     </div>
 
-
-    <!-- DETAIL -->
-    <section id="detail"
-             class="content-section tab-content">
-
-        <h2>
-            Tentang Experience Ini
-        </h2>
-
-        <p class="quote">
-            "Welcome to Euphoria Land - The City
-            That Never Stops Playing."
-        </p>
-
-        <p>
-            Euphoria Land adalah sebuah kota festival
-            yang dibangun untuk merayakan musik, budaya,
-            kreativitas, dan kebersamaan dalam satu
-            pengalaman yang menyeluruh.
-        </p>
-
-        <p>
-            Setiap sudut Euphoria Land memiliki cerita
-            dan karakter tersendiri. Pengunjung dapat
-            menikmati pertunjukan musik, mengeksplorasi
-            berbagai aktivitas, berbelanja produk kreatif,
-            berinteraksi dengan komunitas, hingga menemukan
-            ruang untuk bersantai dan menikmati suasana
-            festival.
-        </p>
-
-        <p>
-            Seluruh elemen tersebut dirancang menjadi satu
-            ekosistem yang hidup dan saling terhubung,
-            menciptakan ruang bagi setiap orang untuk
-            menikmati pengalaman festival dengan cara
-            mereka sendiri.
-        </p>
-
+    <section id="detail" class="tab-content active" role="tabpanel" aria-labelledby="tab-detail">
+        <div class="tab-panel">
+            <h2>Tentang Experience Ini</h2>
+            <p class="lead">"Welcome to Euphoria Land — The City That Never Stops Playing."</p>
+            <p>Euphoria Land adalah sebuah kota festival yang dibangun untuk merayakan musik, budaya, kreativitas, dan kebersamaan dalam satu pengalaman yang menyeluruh.</p>
+            <p>Setiap sudut Euphoria Land memiliki cerita dan karakter tersendiri. Pengunjung dapat menikmati pertunjukan musik, mengeksplorasi berbagai aktivitas, berbelanja produk kreatif, berinteraksi dengan komunitas, hingga menemukan ruang untuk bersantai dan menikmati suasana festival.</p>
+            <p>Seluruh elemen tersebut dirancang menjadi satu ekosistem yang hidup dan saling terhubung, menciptakan ruang bagi setiap orang untuk menikmati pengalaman festival dengan cara mereka sendiri.</p>
+        </div>
     </section>
 
-
-    <!-- VENUE -->
-    <section id="venue"
-             class="content-section tab-content"
-             style="display:none;">
-
-        <h2>
-            Venue
-        </h2>
-
-        <p>
-            Euphoria Life Festival 2027 akan
-            diselenggarakan di Bandung.
-        </p>
-
-        <div class="info-card">
-
-            <div class="info-heading">
-                📍
-                Lokasi Festival
+    <section id="venue" class="tab-content" role="tabpanel" aria-labelledby="tab-venue">
+        <div class="tab-panel">
+            <h2>Venue</h2>
+            <p>Euphoria Life Festival 2027 akan diselenggarakan di Bandung, Jawa Barat. Lokasi detail dan akses venue akan diumumkan bersamaan dengan jadwal event.</p>
+            <div class="panel-card">
+                <h3>Lokasi Festival</h3>
+                <p>Bandung, Jawa Barat, Indonesia</p>
+                <a href="https://maps.google.com/?q=Bandung" class="map-link" target="_blank" rel="noopener">Buka Peta →</a>
             </div>
+        </div>
+    </section>
 
-            <div class="info-value">
-                Bandung, Jawa Barat
+    <section id="guest" class="tab-content" role="tabpanel" aria-labelledby="tab-guest">
+        <div class="tab-panel">
+            <h2>Guest Star</h2>
+            <p>Guest star dan line-up akan diumumkan secara bertahap oleh penyelenggara melalui kanal resmi SnapTix dan media sosial SMC Creator.</p>
+            <span class="chip chip-soon">Line-Up Coming Soon</span>
+        </div>
+    </section>
+
+    <section id="faq" class="tab-content" role="tabpanel" aria-labelledby="tab-faq">
+        <div class="tab-panel">
+            <h2>FAQ</h2>
+            <div class="panel-card">
+                <h3>Sesi mana yang sudah bisa dibeli?</h3>
+                <p>Penjualan tiket saat ini dibuka untuk <strong>Sesi 1</strong> (13:00 – 23:30 WIB). Penjualan Sesi 2 akan segera menyusul.</p>
             </div>
-
-            <a href="#"
-               class="map-link">
-                Buka Peta →
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- GUEST -->
-    <section id="guest"
-             class="content-section tab-content"
-             style="display:none;">
-
-        <h2>
-            Guest Star
-        </h2>
-
-        <p>
-            Guest star dan line-up akan diumumkan
-            secara bertahap oleh penyelenggara.
-        </p>
-
-        <div class="ticket-status coming-soon">
-            LINE UP COMING SOON
-        </div>
-
-    </section>
-
-
-    <!-- FAQ -->
-    <section id="faq"
-             class="content-section tab-content"
-             style="display:none;">
-
-        <h2>
-            FAQ
-        </h2>
-
-        <div class="info-card">
-
-            <h3>
-                Apakah tiket sudah bisa dibeli?
-            </h3>
-
-            <p style="margin-top:10px;">
-                Ya. Tiket yang berstatus OPEN SALE
-                dapat dipilih dan dibeli.
-            </p>
-
-        </div>
-
-        <br>
-
-        <div class="info-card">
-
-            <h3>
-                Apakah tiket bisa dikembalikan?
-            </h3>
-
-            <p style="margin-top:10px;">
-                Kebijakan refund mengikuti ketentuan
-                penyelenggara event.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         TICKET
-    ================================================== -->
-    <section class="ticket-section">
-
-        <div class="section-heading">
-
-            <div class="ticket-symbol">
-                🎟️
+            <div class="panel-card">
+                <h3>Apakah tiket bisa dikembalikan?</h3>
+                <p>Kebijakan refund mengikuti ketentuan penyelenggara event.</p>
             </div>
-
-            <h2>
-                Tiket
-            </h2>
-
+            <div class="panel-card">
+                <h3>Berapa maksimal pembelian?</h3>
+                <p>Maksimal 10 tiket per tipe untuk setiap transaksi.</p>
+            </div>
         </div>
+    </section>
 
+    <section class="ticket-section" id="tiket" aria-label="Daftar tiket">
+        <div class="section-head">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 8.6C3 7.7 3.7 7 4.6 7h14.8c.9 0 1.6.7 1.6 1.6v1.2a2.2 2.2 0 0 0 0 4.4v1.2c0 .9-.7 1.6-1.6 1.6H4.6c-.9 0-1.6-.7-1.6-1.6v-1.2a2.2 2.2 0 0 0 0-4.4V8.6Z"/><path d="M14.5 7v10" stroke="#fff" stroke-width="1.5" stroke-dasharray="2.4 2.4"/></svg>
+            <h2>Tiket</h2>
+        </div>
 
         <div class="ticket-list">
 
-
-            <!-- TICKET 1 -->
-            <div class="ticket-card">
-
+            <article class="ticket-card">
                 <div class="ticket-top">
-
                     <div>
-
-                        <div class="ticket-name">
-                            Early Bird Festival
-                        </div>
-
-                        <div class="ticket-price">
-                            Rp 150.000
-                        </div>
-
+                        <div class="ticket-name">Early Bird Festival</div>
+                        <div class="ticket-price">IDR 150.000</div>
                     </div>
-
-                    <button class="info-button"
-                            onclick="showTicketInfo('Early Bird Festival')">
-                        ⓘ
+                    <button class="info-button" type="button" data-info="Early Bird Festival" aria-label="Info tiket Early Bird Festival">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.9"/><path d="M12 11v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.6" r="1.2" fill="currentColor"/></svg>
                     </button>
-
                 </div>
-
-
                 <div class="ticket-body">
-
                     <div class="session">
-
-                        <strong>
-                            Sesi 1
-                        </strong>
-
-                        <span>
-                            📅 13:00 – 23:30 WIB
-                        </span>
-
-                    </div>
-
-                    <div class="session">
-
-                        <strong>
-                            Sesi 2
-                        </strong>
-
-                        <span>
-                            📅 13:00 – 23:30 WIB
-                        </span>
-
-                    </div>
-
-
-                    <!-- OPEN SALE -->
-                    <div class="ticket-status open-sale">
-                        🟢 OPEN SALE
-                    </div>
-
-
-                    <!-- QUANTITY -->
-                    <div class="ticket-buy-area">
-
-                        <div class="quantity-box">
-
-                            <button class="qty-btn"
-                                    onclick="changeQty('festival',-1)">
-                                −
-                            </button>
-
-                            <div class="qty-value"
-                                 id="qty-festival">
-                                0
-                            </div>
-
-                            <button class="qty-btn"
-                                    onclick="changeQty('festival',1)">
-                                +
-                            </button>
-
+                        <div>
+                            <strong>Sesi 1</strong>
+                            <span class="session-time">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                13:00 – 23:30 WIB
+                            </span>
                         </div>
-
-                        <button class="buy-button"
-                                onclick="buyTicket('festival')">
-                            Beli Tiket
+                        <span class="session-badge badge-open">Open Sale</span>
+                    </div>
+                    <div class="session is-soon">
+                        <div>
+                            <strong>Sesi 2</strong>
+                            <span class="session-time">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                13:00 – 23:30 WIB
+                            </span>
+                        </div>
+                        <span class="session-badge badge-soon">Coming Soon</span>
+                    </div>
+                    <div class="ticket-status status-available">Penjualan Dibuka • Sesi 1</div>
+                    <div class="ticket-buy-area">
+                        <div>
+                            <span class="qty-label">Jumlah tiket (Sesi 1)</span>
+                            <div class="quantity-box">
+                                <button class="qty-btn" type="button" data-qty="festival" data-step="-1" aria-label="Kurangi jumlah tiket Festival Sesi 1">−</button>
+                                <span class="qty-value" id="qty-festival" aria-live="polite">0</span>
+                                <button class="qty-btn" type="button" data-qty="festival" data-step="1" aria-label="Tambah jumlah tiket Festival Sesi 1">+</button>
+                            </div>
+                        </div>
+                        <button class="buy-button" type="button" data-buy="festival">
+                            Beli Tiket Sesi 1
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </button>
-
                     </div>
-
-
                     <div class="total-row">
-
-                        <span class="total-label">
-                            Total
-                        </span>
-
-                        <span class="total-price"
-                              id="total-festival">
-                            Rp 0
-                        </span>
-
+                        <span>Total</span>
+                        <strong id="total-festival">IDR 0</strong>
                     </div>
-
                 </div>
+            </article>
 
-            </div>
-
-
-            <!-- TICKET 2 -->
-            <div class="ticket-card">
-
+            <article class="ticket-card">
                 <div class="ticket-top">
-
                     <div>
-
-                        <div class="ticket-name">
-                            Early Bird VIP
-                        </div>
-
-                        <div class="ticket-price">
-                            Rp 250.000
-                        </div>
-
+                        <div class="ticket-name">Early Bird VIP</div>
+                        <div class="ticket-price">IDR 250.000</div>
                     </div>
-
-                    <button class="info-button"
-                            onclick="showTicketInfo('Early Bird VIP')">
-                        ⓘ
+                    <button class="info-button" type="button" data-info="Early Bird VIP" aria-label="Info tiket Early Bird VIP">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.9"/><path d="M12 11v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.6" r="1.2" fill="currentColor"/></svg>
                     </button>
-
                 </div>
-
-
                 <div class="ticket-body">
-
                     <div class="session">
-
-                        <strong>
-                            Sesi 1
-                        </strong>
-
-                        <span>
-                            📅 13:00 – 23:30 WIB
-                        </span>
-
-                    </div>
-
-                    <div class="session">
-
-                        <strong>
-                            Sesi 2
-                        </strong>
-
-                        <span>
-                            📅 13:00 – 23:30 WIB
-                        </span>
-
-                    </div>
-
-
-                    <!-- OPEN SALE -->
-                    <div class="ticket-status open-sale">
-                        🟢 OPEN SALE
-                    </div>
-
-
-                    <div class="ticket-buy-area">
-
-                        <div class="quantity-box">
-
-                            <button class="qty-btn"
-                                    onclick="changeQty('vip',-1)">
-                                −
-                            </button>
-
-                            <div class="qty-value"
-                                 id="qty-vip">
-                                0
-                            </div>
-
-                            <button class="qty-btn"
-                                    onclick="changeQty('vip',1)">
-                                +
-                            </button>
-
+                        <div>
+                            <strong>Sesi 1</strong>
+                            <span class="session-time">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                13:00 – 23:30 WIB
+                            </span>
                         </div>
-
-                        <button class="buy-button"
-                                onclick="buyTicket('vip')">
-                            Beli Tiket
+                        <span class="session-badge badge-open">Open Sale</span>
+                    </div>
+                    <div class="session is-soon">
+                        <div>
+                            <strong>Sesi 2</strong>
+                            <span class="session-time">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                13:00 – 23:30 WIB
+                            </span>
+                        </div>
+                        <span class="session-badge badge-soon">Coming Soon</span>
+                    </div>
+                    <div class="ticket-status status-available">Penjualan Dibuka • Sesi 1</div>
+                    <div class="ticket-buy-area">
+                        <div>
+                            <span class="qty-label">Jumlah tiket (Sesi 1)</span>
+                            <div class="quantity-box">
+                                <button class="qty-btn" type="button" data-qty="vip" data-step="-1" aria-label="Kurangi jumlah tiket VIP Sesi 1">−</button>
+                                <span class="qty-value" id="qty-vip" aria-live="polite">0</span>
+                                <button class="qty-btn" type="button" data-qty="vip" data-step="1" aria-label="Tambah jumlah tiket VIP Sesi 1">+</button>
+                            </div>
+                        </div>
+                        <button class="buy-button" type="button" data-buy="vip">
+                            Beli Tiket Sesi 1
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </button>
-
                     </div>
-
-
                     <div class="total-row">
-
-                        <span class="total-label">
-                            Total
-                        </span>
-
-                        <span class="total-price"
-                              id="total-vip">
-                            Rp 0
-                        </span>
-
+                        <span>Total</span>
+                        <strong id="total-vip">IDR 0</strong>
                     </div>
-
                 </div>
-
-            </div>
-
+            </article>
 
         </div>
-
     </section>
 
-
-    <!-- ==================================================
-         WHATSAPP
-    ================================================== -->
-    <section class="help-box">
-
-        <div class="help-top">
-
-            <div class="whatsapp-icon">
-                ☎
+    <section class="help-box" aria-label="Bantuan">
+        <div class="help-left">
+            <div class="help-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5A8.4 8.4 0 0 0 4.3 16l-1.2 4.4 4.5-1.2A8.4 8.4 0 1 0 12 3.5Zm4.7 11.8c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.6-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .2 0 .8-.4 1.3Z"/></svg>
             </div>
-
             <div>
-
-                <div class="help-title">
-                    Butuh Bantuan Tiket / Event?
-                </div>
-
-                <div class="help-text">
-                    Hubungi layanan bantuan resmi
-                    SnapTix via WhatsApp
-                </div>
-
+                <div class="help-title">Butuh Bantuan Tiket / Event?</div>
+                <div class="help-text">Hubungi layanan bantuan resmi SnapTix via WhatsApp</div>
             </div>
-
         </div>
-
-        <button class="whatsapp-button"
-                onclick="openWhatsApp()">
-            Hubungi via WhatsApp
-        </button>
-
+        <button class="buy-button" type="button" id="waHelp">Hubungi via WhatsApp</button>
     </section>
 
-
-    <!-- ==================================================
-         OTHER EVENTS
-    ================================================== -->
-    <section class="other-events">
-
-        <h2>
-            Event Lainnya
-        </h2>
-
+    <section class="other-events" aria-label="Event lainnya">
+        <h2>Event Lainnya</h2>
         <div class="events-grid">
-
-
-            <div class="other-card">
-
-                <div class="other-image">
-                    RUANG<br>
-                    BERMUSIK<br>
-                    2027
-                </div>
-
+            <article class="other-card">
+                <div class="other-image oi-blue">RUANG<br>BERMUSIK 2027</div>
                 <div class="other-body">
-
-                    <h3>
-                        Ruang Bermusik
-                    </h3>
-
+                    <h3>Ruang Bermusik</h3>
                     <div class="other-meta">
-                        📅
-                        <span>
-                            9 Januari 2027
-                        </span>
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        9 Januari 2027
                     </div>
-
                     <div class="other-meta">
-                        📍
-                        <span>
-                            Lanud Wiriadinata
-                        </span>
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg>
+                        Lanud Wiriadinata
                     </div>
-
-                    <button class="other-buy">
-                        Beli Tiket
-                    </button>
-
+                    <button class="other-buy" type="button" data-soon>Beli Tiket</button>
                 </div>
-
-            </div>
-
-
-            <div class="other-card">
-
-                <div class="other-image run">
-
-                    BUAHBATU<br>
-                    EQUALS RUN<br>
-                    2026
-
-                </div>
-
+            </article>
+            <article class="other-card">
+                <div class="other-image oi-sand">BUAHBATU<br>EQUALS RUN 2026</div>
                 <div class="other-body">
-
-                    <h3>
-                        Buahbatu Equals Run
-                    </h3>
-
+                    <h3>Buahbatu Equals Run</h3>
                     <div class="other-meta">
-                        📅
-                        <span>
-                            26 Desember 2026
-                        </span>
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        26 Desember 2026
                     </div>
-
                     <div class="other-meta">
-                        📍
-                        <span>
-                            Podomoro Park
-                        </span>
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg>
+                        Podomoro Park
                     </div>
-
-                    <button class="other-buy">
-                        Beli Tiket
-                    </button>
-
+                    <button class="other-buy" type="button" data-soon>Beli Tiket</button>
                 </div>
-
-            </div>
-
-
+            </article>
         </div>
-
     </section>
 
 </div>
-
 </main>
 
-
-<!-- ======================================================
-     FOOTER
-====================================================== -->
-<footer>
-
-<div class="container">
-
-    <div class="footer-grid">
-
-
-        <div>
-
-            <div class="footer-logo">
-
-                <div class="footer-logo-mark"></div>
-
-                snaptix
-
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="#" class="footer-logo" aria-label="SnapTix">
+                    <span class="logo-mark" aria-hidden="true"></span>
+                    snaptix
+                </a>
+                <p class="footer-desc">Snaptix membantu pembeli menemukan tiket event dan penyelenggara mengelola penjualan tiket secara digital.</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M12 4a8 8 0 0 0-6.9 12l-1 3.9 4-1A8 8 0 1 0 12 4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.3 8.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .5.4l.7 1.7c0 .2 0 .3-.1.4l-.4.5-.3.4c0 .2 0 .3.1.5.5.9 1.3 1.6 2.2 2 .2.1.4.1.5-.1l.8-.9c.2-.2.3-.2.5-.1l1.6.8c.2.1.3.2.3.3 0 .7-.3 1.3-.9 1.6-.5.3-1.2.4-1.9.2a7.6 7.6 0 0 1-4.4-3.5c-.4-.7-.6-1.5-.4-2.2l.4-1.4Z" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.8" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.8H3.6V20h2.9V8.8ZM5 7.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4ZM20.4 20h-2.9v-5.8c0-1.5-.6-2.3-1.7-2.3-1.2 0-1.9.8-1.9 2.3V20H11V8.8h2.9v1.3s.9-1.6 2.9-1.6 3.6 1.3 3.6 4V20Z"/></svg>
+                    </a>
+                </div>
             </div>
-
-            <div class="footer-description">
-
-                Snaptix membantu pembeli menemukan
-                tiket event dan penyelenggara mengelola
-                penjualan tiket secara digital.
-
+            <div class="footer-col">
+                <h3>Jelajahi Snaptix</h3>
+                <a href="#">Tentang Snaptix</a>
+                <a href="#">Cari Event</a>
+                <a href="#">Panduan Penyelenggara</a>
             </div>
-
-            <div class="footer-social">
-
-                <a href="#">◉</a>
-                <a href="#">◎</a>
-                <a href="#">in</a>
-
+            <div class="footer-col">
+                <h3>Bantuan</h3>
+                <a href="#">Hubungi Snaptix</a>
+                <a href="#">Informasi Penyelenggara</a>
+                <h3>Kebijakan</h3>
+                <a href="#">Syarat dan Ketentuan</a>
+                <a href="#">Kebijakan Privasi</a>
             </div>
-
         </div>
-
-
-        <div class="footer-column">
-
-            <h3>
-                Jelajahi Snaptix
-            </h3>
-
-            <a href="#">
-                Tentang Snaptix
-            </a>
-
-            <a href="#">
-                Cari Event
-            </a>
-
-            <a href="#">
-                Panduan Penyelenggara
-            </a>
-
+        <div class="footer-bottom">
+            © 2026 Snaptix. All rights reserved.
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
         </div>
-
-
-        <div class="footer-column">
-
-            <h3>
-                Bantuan
-            </h3>
-
-            <a href="#">
-                Hubungi Snaptix
-            </a>
-
-            <a href="#">
-                Informasi Penyelenggara
-            </a>
-
-            <h3 style="margin-top:45px;">
-                Kebijakan
-            </h3>
-
-            <a href="#">
-                Syarat dan Ketentuan
-            </a>
-
-            <a href="#">
-                Kebijakan Privasi
-            </a>
-
-        </div>
-
-
     </div>
-
-
-    <div class="footer-bottom">
-
-        © 2026 Snaptix. All rights reserved.
-
-        <div class="footer-links">
-
-            <a href="#">
-                Privacy Policy
-            </a>
-
-            <a href="#">
-                Terms of Service
-            </a>
-
-            <a href="#">
-                Contact
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
+    <div class="footer-watermark" aria-hidden="true">SNAPTIX</div>
 </footer>
 
-
-<!-- ======================================================
-     MODAL
-====================================================== -->
-<div class="modal"
-     id="purchaseModal">
-
-    <div class="modal-box">
-
-        <h3>
-            Konfirmasi Tiket
-        </h3>
-
-        <div class="modal-summary">
-
-            <div id="modalTicketName">
-                -
-            </div>
-
-            <div id="modalTicketQty">
-                Jumlah: 0
-            </div>
-
-        </div>
-
-        <div class="modal-total">
-
-            <span>
-                Total
-            </span>
-
-            <span id="modalTotal">
-                Rp 0
-            </span>
-
-        </div>
-
-
-        <div class="modal-actions">
-
-            <button class="modal-close"
-                    onclick="closeModal()">
-                Batal
-            </button>
-
-            <button class="modal-confirm"
-                    onclick="confirmPurchase()">
-                Lanjutkan
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-/* =========================================================
-   DATA TIKET
-========================================================= */
-
-const tickets = {
-
-    festival:{
-        name:"Early Bird Festival",
-        price:150000,
-        qty:0,
-        max:10
-    },
-
-    vip:{
-        name:"Early Bird VIP",
-        price:250000,
-        qty:0,
-        max:10
-    }
-
+const tickets={
+    festival:{name:"Early Bird Festival",session:"Sesi 1",price:150000,qty:0,max:10},
+    vip:{name:"Early Bird VIP",session:"Sesi 1",price:250000,qty:0,max:10}
 };
+const nf=new Intl.NumberFormat("id-ID");
+const idr=n=>"IDR "+nf.format(n);
+const $=s=>document.querySelector(s);
+const $$=s=>document.querySelectorAll(s);
 
-
-/* =========================================================
-   FORMAT RUPIAH
-========================================================= */
-
-function rupiah(number){
-
-    return new Intl.NumberFormat(
-        "id-ID",
-        {
-            style:"currency",
-            currency:"IDR",
-            maximumFractionDigits:0
-        }
-    ).format(number);
-
+let toastTimer;
+function toast(msg){
+    const el=$("#toast");
+    el.textContent=msg;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(()=>el.classList.remove("show"),2800);
 }
 
-
-/* =========================================================
-   QUANTITY +/- 
-========================================================= */
-
-function changeQty(type,amount){
-
-    const ticket = tickets[type];
-
-    let newQty = ticket.qty + amount;
-
-    if(newQty < 0){
-        newQty = 0;
+function changeQty(type,step){
+    const t=tickets[type];
+    if(step>0&&t.qty===t.max){
+        toast("Maksimal pembelian "+t.max+" tiket.");
+        return;
     }
-
-    if(newQty > ticket.max){
-
-        alert(
-            "Maksimal pembelian " +
-            ticket.max +
-            " tiket."
-        );
-
-        newQty = ticket.max;
-    }
-
-    ticket.qty = newQty;
-
-    document.getElementById(
-        "qty-" + type
-    ).textContent = newQty;
-
-    document.getElementById(
-        "total-" + type
-    ).textContent =
-        rupiah(ticket.qty * ticket.price);
-
+    t.qty=Math.min(Math.max(t.qty+step,0),t.max);
+    $("#qty-"+type).textContent=t.qty;
+    $("#total-"+type).textContent=idr(t.qty*t.price);
 }
-
-
-/* =========================================================
-   BUY TICKET
-========================================================= */
-
-let selectedTicket = null;
 
 function buyTicket(type){
-
-    const ticket = tickets[type];
-
-    if(ticket.qty <= 0){
-
-        alert(
-            "Silakan pilih jumlah tiket terlebih dahulu menggunakan tombol +."
-        );
-
+    const t=tickets[type];
+    if(t.qty<1){
+        toast("Silakan pilih jumlah tiket terlebih dahulu.");
         return;
     }
-
-    selectedTicket = type;
-
-    document.getElementById(
-        "modalTicketName"
-    ).textContent = ticket.name;
-
-    document.getElementById(
-        "modalTicketQty"
-    ).textContent =
-        "Jumlah: " + ticket.qty + " tiket";
-
-    document.getElementById(
-        "modalTotal"
-    ).textContent =
-        rupiah(ticket.qty * ticket.price);
-
-    document.getElementById(
-        "purchaseModal"
-    ).classList.add("show");
-
-}
-
-
-/* =========================================================
-   CLOSE MODAL
-========================================================= */
-
-function closeModal(){
-
-    document.getElementById(
-        "purchaseModal"
-    ).classList.remove("show");
-
-}
-
-
-/* =========================================================
-   CONFIRM PURCHASE
-========================================================= */
-
-function confirmPurchase(){
-
-    if(!selectedTicket){
-        return;
-    }
-
-    const ticket =
-        tickets[selectedTicket];
-
-    const message =
-        "Halo SnapTix, saya ingin membeli tiket " +
-        ticket.name +
-        " sebanyak " +
-        ticket.qty +
-        " tiket. Total " +
-        rupiah(ticket.qty * ticket.price) +
-        ".";
-
-    const phone =
-        "6281234567890";
-
-    const url =
-        "https://wa.me/" +
-        phone +
-        "?text=" +
-        encodeURIComponent(message);
-
-    window.open(
-        url,
-        "_blank"
-    );
-
-    closeModal();
-
-}
-
-
-/* =========================================================
-   WHATSAPP BANTUAN
-========================================================= */
-
-function openWhatsApp(){
-
-    const phone =
-        "6281234567890";
-
-    const message =
-        "Halo SnapTix, saya membutuhkan bantuan terkait tiket/event Euphoria Life Festival 2027.";
-
-    window.open(
-        "https://wa.me/" +
-        phone +
-        "?text=" +
-        encodeURIComponent(message),
-        "_blank"
-    );
-
-}
-
-
-/* =========================================================
-   TICKET INFO
-========================================================= */
-
-function showTicketInfo(name){
-
-    alert(
-        name +
-        "\n\n" +
-        "Status: OPEN SALE\n" +
-        "Waktu: 13:00 – 23:30 WIB\n" +
-        "Maksimal pembelian: 10 tiket"
-    );
-
-}
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-function loginAlert(){
-
-    alert(
-        "Halaman Login SnapTix\n\n" +
-        "Silakan hubungkan tombol ini " +
-        "ke halaman login Anda."
-    );
-
-}
-
-
-/* =========================================================
-   TABS
-========================================================= */
-
-function showTab(tabId,button){
-
-    const contents =
-        document.querySelectorAll(
-            ".tab-content"
-        );
-
-    contents.forEach(function(content){
-
-        content.style.display =
-            "none";
-
+    const params=new URLSearchParams({
+        tiket:t.name,
+        sesi:t.session,
+        jumlah:t.qty,
+        total:t.qty*t.price
     });
-
-
-    document.getElementById(
-        tabId
-    ).style.display = "block";
-
-
-    const buttons =
-        document.querySelectorAll(
-            ".tab"
-        );
-
-    buttons.forEach(function(btn){
-
-        btn.classList.remove(
-            "active"
-        );
-
-    });
-
-
-    button.classList.add(
-        "active"
-    );
-
+    window.location.href="form.html?"+params.toString();
 }
 
+function showTab(id,btn){
+    $$(".tab-content").forEach(p=>p.classList.remove("active"));
+    $("#"+id).classList.add("active");
+    $$(".tab").forEach(b=>{
+        b.classList.remove("active");
+        b.setAttribute("aria-selected","false");
+    });
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected","true");
+}
 
-/* =========================================================
-   CLOSE MODAL WHEN CLICK OUTSIDE
-========================================================= */
+const WA_NUMBER="6281234567890";
+ $("#waHelp").addEventListener("click",()=>{
+    const text="Halo SnapTix, saya membutuhkan bantuan terkait tiket/event Euphoria Life Festival 2027.";
+    window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(text),"_blank","noopener");
+});
 
-document.getElementById(
-    "purchaseModal"
-).addEventListener(
-    "click",
-    function(e){
+ $$("[data-qty]").forEach(b=>b.addEventListener("click",()=>changeQty(b.dataset.qty,Number(b.dataset.step))));
+ $$("[data-buy]").forEach(b=>b.addEventListener("click",()=>buyTicket(b.dataset.buy)));
+ $$("[data-info]").forEach(b=>b.addEventListener("click",()=>toast(b.dataset.info+" • Sesi 1: OPEN SALE • Sesi 2: Coming Soon • Maks. 10 tiket")));
+ $$("[data-soon]").forEach(b=>b.addEventListener("click",()=>toast("Tiket event ini segera tersedia. Pantau terus SnapTix!")));
+ $("#loginBtn").addEventListener("click",()=>toast("Halaman login segera tersedia."));
 
-        if(e.target === this){
-
-            closeModal();
-
-        }
-
-    }
-);
-
+const tabs=$$(".tab");
+tabs.forEach((btn,i)=>{
+    btn.addEventListener("click",()=>showTab(btn.dataset.target,btn));
+    btn.addEventListener("keydown",e=>{
+        if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;
+        e.preventDefault();
+        const next=tabs[(i+(e.key==="ArrowRight"?1:-1)+tabs.length)%tabs.length];
+        next.focus();
+        showTab(next.dataset.target,next);
+    });
+});
 </script>
 
 </body>
