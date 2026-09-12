@@ -140,7 +140,7 @@ section{scroll-margin-top:150px}
 .total-row span{color:var(--muted);font-size:13.5px}
 .total-row strong{color:var(--navy);font-size:17px;font-weight:700}
 
-.help-box{margin:30px 0;padding:20px 22px;border:1.5px solid #c9edd9;border-radius:16px;background:#f2fbf6;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.help-box{margin:30px 0 40px;padding:20px 22px;border:1.5px solid #c9edd9;border-radius:16px;background:#f2fbf6;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .help-left{display:flex;align-items:center;gap:14px}
 .help-icon{width:46px;height:46px;border-radius:12px;background:#25d366;display:grid;place-items:center;color:#fff;flex:none}
 .help-icon svg{width:24px;height:24px}
@@ -148,21 +148,6 @@ section{scroll-margin-top:150px}
 .help-text{font-size:13.5px;color:#177352}
 .help-box .buy-button{background:#25d366;box-shadow:0 5px 14px rgba(37,211,102,.35)}
 .help-box .buy-button:hover{background:#1fb857}
-
-.other-events{border-top:1px solid var(--border);padding:34px 0 48px}
-.other-events h2{font-size:22px;font-weight:700;letter-spacing:-.4px;color:#182035;margin-bottom:20px}
-.events-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.other-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 2px 10px rgba(20,27,45,.05);transition:.2s;display:flex;flex-direction:column}
-.other-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.other-image{height:120px;display:grid;place-items:center;text-align:center;color:#fff;font-size:17px;font-weight:700;line-height:1.35;padding:12px}
-.oi-blue{background:linear-gradient(135deg,#1f6fb2,#43b0dd)}
-.oi-sand{background:linear-gradient(135deg,#b99a6b,#e0c9a2);color:#3a2e1f}
-.other-body{padding:16px;display:flex;flex-direction:column;flex:1}
-.other-body h3{font-size:16.5px;font-weight:600;letter-spacing:-.2px}
-.other-meta{display:flex;align-items:center;gap:8px;margin-top:8px;color:#5a6478;font-size:13.5px}
-.other-meta svg{width:14px;height:14px;color:var(--navy);flex:none}
-.other-buy{margin-top:14px;width:100%;height:40px;border-radius:10px;background:var(--navy);color:#fff;font-size:14px;font-weight:600;transition:.2s}
-.other-buy:hover{background:var(--navy-dark)}
 
 .site-footer{margin-top:10px;background:#0e1626;color:#fff;padding:44px 0 0;overflow:hidden}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:40px}
@@ -207,7 +192,6 @@ section{scroll-margin-top:150px}
     .ticket-buy-area{flex-direction:column;align-items:stretch}
     .quantity-box{justify-content:space-between}
     .buy-button{width:100%}
-    .events-grid{grid-template-columns:1fr}
     .footer-grid{grid-template-columns:1fr;gap:32px}
     section{scroll-margin-top:140px}
 }
@@ -485,42 +469,6 @@ section{scroll-margin-top:150px}
         <button class="buy-button" type="button" id="waHelp">Hubungi via WhatsApp</button>
     </section>
 
-    <section class="other-events" aria-label="Event lainnya">
-        <h2>Event Lainnya</h2>
-        <div class="events-grid">
-            <article class="other-card">
-                <div class="other-image oi-blue">RUANG<br>BERMUSIK 2027</div>
-                <div class="other-body">
-                    <h3>Ruang Bermusik</h3>
-                    <div class="other-meta">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-                        9 Januari 2027
-                    </div>
-                    <div class="other-meta">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg>
-                        Lanud Wiriadinata
-                    </div>
-                    <button class="other-buy" type="button" data-soon>Beli Tiket</button>
-                </div>
-            </article>
-            <article class="other-card">
-                <div class="other-image oi-sand">BUAHBATU<br>EQUALS RUN 2026</div>
-                <div class="other-body">
-                    <h3>Buahbatu Equals Run</h3>
-                    <div class="other-meta">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-                        26 Desember 2026
-                    </div>
-                    <div class="other-meta">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.8"/></svg>
-                        Podomoro Park
-                    </div>
-                    <button class="other-buy" type="button" data-soon>Beli Tiket</button>
-                </div>
-            </article>
-        </div>
-    </section>
-
 </div>
 </main>
 
@@ -639,7 +587,6 @@ const WA_NUMBER="6281234567890";
  $$("[data-qty]").forEach(b=>b.addEventListener("click",()=>changeQty(b.dataset.qty,Number(b.dataset.step))));
  $$("[data-buy]").forEach(b=>b.addEventListener("click",()=>buyTicket(b.dataset.buy)));
  $$("[data-info]").forEach(b=>b.addEventListener("click",()=>toast(b.dataset.info+" • Sesi 1: OPEN SALE • Sesi 2: Coming Soon • Maks. 10 tiket")));
- $$("[data-soon]").forEach(b=>b.addEventListener("click",()=>toast("Tiket event ini segera tersedia. Pantau terus SnapTix!")));
  $("#loginBtn").addEventListener("click",()=>toast("Halaman login segera tersedia."));
 
 const tabs=$$(".tab");
