@@ -18,13 +18,8 @@
 <noscript><style>.sticky{display:none}</style></noscript>
 <style>
 :root{
-  --bg:#F4F6FA;
-  --ink:#1F2937;--ink-strong:#111827;--t-mid:#4B5563;--t-muted:#6B7280;--t-soft:#9CA3AF;
-  --b9:#0C2C91;--b5:#3160F4;
-  --acc:#3561FF;--acc-deep:#2143D8;
-  --ln:#E5E7EB;
-  --err:#EF4444;--err-bg:#FEF2F2;
-  --ok:#168447;--ok-bg:#E3F6EC;
+  --bg:#F4F6FA;--ink:#1F2937;--ink-strong:#111827;--t-mid:#4B5563;--t-muted:#6B7280;--t-soft:#9CA3AF;
+  --b9:#0C2C91;--b5:#3160F4;--acc:#3561FF;--acc-deep:#2143D8;--ln:#E5E7EB;--err:#EF4444;--err-bg:#FEF2F2;
   --g1:#FDF5A6;--g2:#FCE28A;--g3:#D4AF37;--gold-ink:#5C4405;--gold-deep:#B8861A;
   --gold-grad:linear-gradient(180deg,#FDF5A6 0%,#FCE28A 30%,#D4AF37 50%,#AA771C 60%,#FDF5A6);
   --ease-soft:cubic-bezier(.4,0,.2,1);
@@ -46,10 +41,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--b5);outline-offset:
 .progress::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(253,245,166,.45),transparent)}
 .progress-inner{position:relative}
 .progress-track{position:absolute;top:14px;left:15px;right:15px;height:3px;background:rgba(255,255,255,.14);border-radius:999px;z-index:1}
-.progress-fill{height:100%;width:33.3%;background:linear-gradient(90deg,var(--g1),var(--g2) 40%,var(--g3) 70%,var(--gold-deep));border-radius:999px;box-shadow:0 0 10px rgba(212,175,55,.7);transition:width .7s var(--ease-soft)}
+.progress-fill{height:100%;width:33.3%;background:linear-gradient(90deg,var(--g1),var(--g2) 40%,var(--g3) 70%,var(--gold-deep));border-radius:999px;box-shadow:0 0 10px rgba(212,175,55,.7)}
 .progress-steps{position:relative;z-index:2;display:flex;justify-content:space-between;list-style:none}
 .step{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
-.step-dot{width:30px;height:30px;border-radius:50%;background:#0A2370;border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:rgba(255,255,255,.55);transition:all .3s;position:relative}
+.step-dot{width:30px;height:30px;border-radius:50%;background:#0A2370;border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:rgba(255,255,255,.55);position:relative}
 .step-num{display:block;line-height:1}
 .step-check{display:none;width:14px;height:14px;stroke:var(--gold-ink);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .step.completed .step-dot{background:var(--gold-grad);border-color:var(--g3);color:var(--gold-ink);box-shadow:0 4px 14px rgba(212,175,55,.5),inset 0 1px 2px rgba(255,255,255,.45)}
@@ -134,18 +129,6 @@ input.error,select.error,textarea.error{border-color:var(--err);background:var(-
 .footer-contact-item svg{width:16px;height:16px;flex-shrink:0}
 .footer-sep{height:1px;background:var(--ln);margin:18px 0 14px}
 .footer-copy{font-size:11.5px;font-weight:500;opacity:.45}
-.success-icon{width:64px;height:64px;border-radius:50%;background:var(--ok-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-.success-icon svg{width:30px;height:30px;stroke:var(--ok);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.success-title{font-size:20px;font-weight:800;color:var(--ink-strong);text-align:center}
-.success-sub{font-size:13px;color:var(--t-muted);text-align:center;margin:8px 0 18px;line-height:1.6}
-.success-box{background:var(--bg);border:1px solid var(--ln);border-radius:12px;padding:6px 16px;margin-bottom:18px}
-.success-box .summary-row:last-child{border-bottom:none}
-.success-actions{display:flex;flex-direction:column;gap:10px}
-.btn-wa{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border:none;border-radius:10px;background:#25D366;color:#fff;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(37,211,102,.4);transition:.2s}
-.btn-wa:hover{background:#1FB857;transform:translateY(-1px)}
-.btn-wa svg{width:17px;height:17px;fill:#fff}
-.btn-home{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:10px;background:var(--bg);border:1px solid var(--ln);color:var(--b9);font-size:14px;font-weight:700;text-decoration:none;transition:.2s}
-.btn-home:hover{border-color:var(--b5);background:#F0F5FF}
 .loading-overlay{visibility:hidden;opacity:0;position:fixed;inset:0;background:rgba(255,255,255,.97);z-index:99999;display:flex;justify-content:center;align-items:center;flex-direction:column;transition:opacity .3s}
 .loading-overlay.active{visibility:visible;opacity:1}
 .spinner-box{width:70px;height:70px;display:flex;justify-content:center;align-items:center;border-radius:50%;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.1);margin-bottom:20px}
@@ -171,7 +154,7 @@ input.error,select.error,textarea.error{border-color:var(--err);background:var(-
     </div>
     <div class="progress">
       <div class="progress-inner">
-        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-track" aria-hidden="true"><div class="progress-fill"></div></div>
         <ol class="progress-steps" aria-label="Progress pemesanan">
           <li class="step completed"><div class="step-dot"><span class="step-num">1</span><svg class="step-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><span class="step-label">Pilih Tiket</span></li>
           <li class="step active" aria-current="step"><div class="step-dot"><span class="step-num">2</span><svg class="step-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><span class="step-label">Data Pembeli</span></li>
@@ -187,62 +170,43 @@ input.error,select.error,textarea.error{border-color:var(--err);background:var(-
   <main class="content">
     <noscript><p class="noscript-note">Aktifkan JavaScript di browser Anda untuk menggunakan form pemesanan ini.</p></noscript>
 
-    <div id="orderArea">
-      <h1 class="page-title">Form Pemesanan Tiket</h1>
-      <div class="page-subtitle">Lengkapi data berikut sebelum melanjutkan ke pembayaran.</div>
+    <h1 class="page-title">Form Pemesanan Tiket</h1>
+    <div class="page-subtitle">Lengkapi data berikut sebelum melanjutkan ke pembayaran.</div>
 
-      <div class="card">
-        <div class="event-hero">
-          <h2>EUPHORIA LIFE FESTIVAL 2027</h2>
-          <p>The City That Never Stops Playing</p>
-          <div class="event-info">
-            <div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Sesi 1 • 13:00–23:30 WIB</div>
-            <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Bandung</div>
-          </div>
+    <div class="card">
+      <div class="event-hero">
+        <h2>EUPHORIA LIFE FESTIVAL 2027</h2>
+        <p>The City That Never Stops Playing</p>
+        <div class="event-info">
+          <div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Sesi 1 • 13:00–23:30 WIB</div>
+          <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Bandung</div>
         </div>
-        <div class="card-title">Ringkasan Pesanan</div>
-        <div class="summary-row"><span>Jenis Tiket</span><strong id="jenisTiket">-</strong></div>
-        <div id="detailTiket"></div>
-        <div class="summary-row"><span>Sesi</span><strong id="sesiTiket">Sesi 1</strong></div>
-        <div class="summary-row"><span>Jumlah Tiket</span><strong id="jumlahTiket">0 Tiket</strong></div>
-        <div class="summary-row total"><span>Total Bayar</span><strong id="totalBayar">Rp0</strong></div>
       </div>
-
-      <div class="card">
-        <div class="card-title">Data Pemesan <span class="muted">(Pemegang Tiket #1)</span></div>
-        <div class="form-group"><label for="nama">Nama Lengkap (sesuai identitas)</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><input id="nama" type="text" placeholder="Masukkan nama lengkap" autocomplete="name"></div></div>
-        <div class="form-group"><label for="identitas">Jenis Identitas</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><select id="identitas"><option value="">Pilih Jenis Identitas</option><option>KTP</option><option>SIM</option><option>Paspor</option><option>Kartu Pelajar</option></select></div></div>
-        <div class="form-group"><label for="nomorId">Nomor Identitas</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><input id="nomorId" type="text" placeholder="Masukkan nomor identitas" autocomplete="off"></div></div>
-        <div class="form-group"><label for="email">E-mail Aktif</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><input id="email" type="email" placeholder="contoh@email.com" autocomplete="email"></div></div>
-        <div class="form-group"><label for="wa">No. WhatsApp Aktif</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><input id="wa" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel"></div></div>
-        <div class="form-group"><label for="alamat">Alamat / Tempat Tinggal</label><div class="input-icon-wrap"><textarea id="alamat" placeholder="Masukkan alamat lengkap" autocomplete="street-address"></textarea></div></div>
-      </div>
-
-      <div id="holderContainer"></div>
-
-      <div class="card">
-        <div class="card-title">Persetujuan</div>
-        <div class="check"><input type="checkbox" id="setuju1"><label for="setuju1">Data yang saya isi adalah benar dan dapat dipertanggungjawabkan.</label></div>
-        <div class="check"><input type="checkbox" id="setuju2"><label for="setuju2">Saya menyetujui syarat dan ketentuan acara serta kebijakan privasi SnapTix.</label></div>
-      </div>
+      <div class="card-title">Ringkasan Pesanan</div>
+      <div class="summary-row"><span>Jenis Tiket</span><strong id="jenisTiket">-</strong></div>
+      <div id="detailTiket"></div>
+      <div class="summary-row"><span>Sesi</span><strong id="sesiTiket">Sesi 1</strong></div>
+      <div class="summary-row"><span>Jumlah Tiket</span><strong id="jumlahTiket">0 Tiket</strong></div>
+      <div class="summary-row total"><span>Total Bayar</span><strong id="totalBayar">Rp0</strong></div>
     </div>
 
-    <section class="card" id="successCard" hidden aria-label="Pesanan terkirim">
-      <div class="success-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <h2 class="success-title">Pesanan Terkirim!</h2>
-      <p class="success-sub">Detail pesanan Anda telah dibuka di WhatsApp. Tim SnapTix akan menghubungi Anda untuk instruksi pembayaran dan penerbitan E-Ticket.</p>
-      <div class="success-box">
-        <div class="summary-row"><span>Kode Pesanan</span><strong id="rCode">-</strong></div>
-        <div class="summary-row"><span>Tiket</span><strong id="rTiket">-</strong></div>
-        <div class="summary-row"><span>Sesi</span><strong id="rSesi">-</strong></div>
-        <div class="summary-row"><span>Jumlah</span><strong id="rJumlah">-</strong></div>
-        <div class="summary-row total"><span>Total Bayar</span><strong id="rTotal">-</strong></div>
-      </div>
-      <div class="success-actions">
-        <button type="button" class="btn-wa" id="reopenWa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>Buka WhatsApp Lagi</button>
-        <a href="index.html" class="btn-home">Kembali ke Halaman Event</a>
-      </div>
-    </section>
+    <div class="card">
+      <div class="card-title">Data Pemesan <span class="muted">(Pemegang Tiket #1)</span></div>
+      <div class="form-group"><label for="nama">Nama Lengkap (sesuai identitas)</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><input id="nama" type="text" placeholder="Masukkan nama lengkap" autocomplete="name"></div></div>
+      <div class="form-group"><label for="identitas">Jenis Identitas</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><select id="identitas"><option value="">Pilih Jenis Identitas</option><option>KTP</option><option>SIM</option><option>Paspor</option><option>Kartu Pelajar</option></select></div></div>
+      <div class="form-group"><label for="nomorId">Nomor Identitas</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><input id="nomorId" type="text" placeholder="Masukkan nomor identitas" autocomplete="off"></div></div>
+      <div class="form-group"><label for="email">E-mail Aktif</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><input id="email" type="email" placeholder="contoh@email.com" autocomplete="email"></div></div>
+      <div class="form-group"><label for="wa">No. WhatsApp Aktif</label><div class="input-icon-wrap"><svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><input id="wa" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel"></div></div>
+      <div class="form-group"><label for="alamat">Alamat / Tempat Tinggal</label><div class="input-icon-wrap"><textarea id="alamat" placeholder="Masukkan alamat lengkap" autocomplete="street-address"></textarea></div></div>
+    </div>
+
+    <div id="holderContainer"></div>
+
+    <div class="card">
+      <div class="card-title">Persetujuan</div>
+      <div class="check"><input type="checkbox" id="setuju1"><label for="setuju1">Data yang saya isi adalah benar dan dapat dipertanggungjawabkan.</label></div>
+      <div class="check"><input type="checkbox" id="setuju2"><label for="setuju2">Saya menyetujui syarat dan ketentuan acara serta kebijakan privasi SnapTix.</label></div>
+    </div>
 
     <footer class="site-footer">
       <div class="footer-brand"><span class="footer-mark" aria-hidden="true"></span><span class="footer-name">snaptix</span></div>
@@ -256,7 +220,7 @@ input.error,select.error,textarea.error{border-color:var(--err);background:var(-
   </main>
 </div>
 
-<div class="sticky" id="stickyBar">
+<div class="sticky">
   <div class="flying-box">
     <button type="button" class="btn-lanjut" id="lanjut"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>LANJUT KE PEMBAYARAN</span></button>
   </div>
@@ -279,10 +243,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } }
 };
 
-const WA_NUMBER = "6281234567890";
 const MAX_HOLDERS = 10;
-const EVENT_NAME = "Euphoria Life Festival 2027";
-
 let items = [], total = 0, jumlahTiket = 0, sesi = "Sesi 1";
 
 const params = new URLSearchParams(location.search);
@@ -291,7 +252,7 @@ const pSesi = params.get("sesi");
 const pJumlah = parseInt(params.get("jumlah"), 10);
 const pTotal = parseInt(params.get("total"), 10);
 
-if (pTiket && Number.isFinite(pJumlah) && pJumlah > 0 && Number.isFinite(pTotal) && pTotal > 0 && pJumlah <= MAX_HOLDERS) {
+if (pTiket && Number.isFinite(pJumlah) && pJumlah > 0 && pJumlah <= MAX_HOLDERS && Number.isFinite(pTotal) && pTotal > 0) {
   items = [{ nama: pTiket, qty: pJumlah, harga: Math.round(pTotal / pJumlah) }];
   total = pTotal;
   jumlahTiket = pJumlah;
@@ -311,18 +272,19 @@ if (pTiket && Number.isFinite(pJumlah) && pJumlah > 0 && Number.isFinite(pTotal)
   jumlahTiket = +(store.get("jumlahTiket")) || 0;
   sesi = store.get("sesiEvent") || "Sesi 1";
   if (!Number.isFinite(total) || total < 0) total = 0;
-  if (!Number.isFinite(jumlahTiket) || jumlahTiket < 0) jumlahTiket = 0;
-  jumlahTiket = Math.min(jumlahTiket, MAX_HOLDERS);
+  jumlahTiket = Math.min(Math.max(0, jumlahTiket), MAX_HOLDERS);
 }
 
-const detailWrap = $("detailTiket"), jenisEl = $("jenisTiket"), jumlahEl = $("jumlahTiket"), totalEl = $("totalBayar"), sesiEl = $("sesiTiket");
-let jenisTiketText = "";
 const hasOrder = items.length > 0 && jumlahTiket > 0 && total > 0;
 
-const addRow = (parent, left, right, small) => {
+const detailWrap = $("detailTiket"), jenisEl = $("jenisTiket"), sesiEl = $("sesiTiket"),
+      jumlahEl = $("jumlahTiket"), totalEl = $("totalBayar");
+let jenisTiketText = "";
+
+const addRow = (parent, left, right) => {
   const row = document.createElement("div");
   row.className = "summary-row";
-  if (small) row.style.fontSize = "13px";
+  row.style.fontSize = "13px";
   const s = document.createElement("span"); s.textContent = left;
   const st = document.createElement("strong"); st.textContent = right;
   row.append(s, st);
@@ -331,7 +293,7 @@ const addRow = (parent, left, right, small) => {
 
 if (hasOrder) {
   for (const it of items) {
-    addRow(detailWrap, it.nama + " (" + it.qty + "x)", "Rp" + (it.qty * it.harga).toLocaleString("id-ID"), true);
+    addRow(detailWrap, it.nama + " (" + it.qty + "x)", "Rp" + (it.qty * it.harga).toLocaleString("id-ID"));
     jenisTiketText += (jenisTiketText ? ", " : "") + it.nama + " (" + it.qty + ")";
   }
 } else {
@@ -353,13 +315,12 @@ totalEl.textContent = "Rp" + total.toLocaleString("id-ID");
 const namaEl = $("nama"), identitasEl = $("identitas"), nomorIdEl = $("nomorId"), emailEl = $("email"),
       waEl = $("wa"), alamatEl = $("alamat"), setuju1El = $("setuju1"), setuju2El = $("setuju2"),
       loadingEl = $("loading"), lanjutBtn = $("lanjut"), toastEl = $("toast"),
-      holderContainer = $("holderContainer"), orderArea = $("orderArea"), successCard = $("successCard"),
-      stickyBar = $("stickyBar"), progressFill = $("progressFill");
+      holderContainer = $("holderContainer");
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const phoneRe = /^(\+62|62|0)8\d{7,12}$/;
-
 const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 let tt = null, busy = false;
 const btnHTML = lanjutBtn.innerHTML;
 const spinnerHTML = '<div class="spinner"></div>';
@@ -482,17 +443,6 @@ const resetBusy = () => {
 };
 window.addEventListener("pageshow", e => { if (e.persisted) resetBusy(); });
 
-const setProgress = step => {
-  const steps = document.querySelectorAll(".progress-steps .step");
-  steps.forEach((s, i) => {
-    s.classList.remove("completed", "active");
-    s.removeAttribute("aria-current");
-    if (i < step) s.classList.add("completed");
-    else if (i === step) { s.classList.add("active"); s.setAttribute("aria-current", "step"); }
-  });
-  progressFill.style.width = (step / (steps.length - 1) * 100) + "%";
-};
-
 lanjutBtn.addEventListener("click", () => {
   if (busy) return;
 
@@ -545,54 +495,21 @@ lanjutBtn.addEventListener("click", () => {
   saveDraft(); saveHoldersDraft();
 
   const code = "SMTX-" + Math.random().toString(36).substring(2, 8).toUpperCase();
-
   const dataPemesan = {
     kode: code,
-    nama: namaEl.value, wa: waEl.value, email: emailEl.value,
-    identitas: identitasEl.value, nomorId: nomorIdEl.value, alamat: alamatEl.value,
+    nama: namaEl.value.trim(), wa: waEl.value.trim(), email: emailEl.value.trim(),
+    identitas: identitasEl.value, nomorId: nomorIdEl.value.trim(), alamat: alamatEl.value.trim(),
     holders: hData,
     cart: { items: items.map(it => ({ jenis: it.nama, qty: it.qty, harga: it.harga })), sesi: sesi, totalQty: jumlahTiket, totalPrice: total }
   };
-  store.set("data_pemesan", JSON.stringify(dataPemesan));
 
-  let msg = "Halo SnapTix, saya ingin memesan tiket:\n\n";
-  msg += "Kode Pesanan : " + code + "\n";
-  msg += "Event        : " + EVENT_NAME + "\n";
-  msg += "Tiket        : " + jenisTiketText + "\n";
-  msg += "Sesi         : " + sesi + " (13:00-23:30 WIB)\n";
-  msg += "Jumlah       : " + jumlahTiket + " tiket\n";
-  msg += "Total Bayar  : Rp" + total.toLocaleString("id-ID") + "\n\n";
-  msg += "DATA PEMESAN\n";
-  msg += "Nama      : " + namaEl.value.trim() + "\n";
-  msg += "Identitas : " + identitasEl.value + " - " + nomorIdEl.value.trim() + "\n";
-  msg += "Email     : " + emailEl.value.trim() + "\n";
-  msg += "WhatsApp  : " + waEl.value.trim() + "\n";
-  msg += "Alamat    : " + alamatEl.value.trim() + "\n";
-  if (hData.length) {
-    msg += "\nPEMEGANG TIKET\n";
-    hData.forEach(h => { msg += "#" + h.tiket + ": " + h.nama + " | " + h.email + " | " + h.wa + "\n"; });
+  if (!store.set("data_pemesan", JSON.stringify(dataPemesan))) {
+    toast("Gagal menyimpan data pesanan. Coba lagi.");
+    resetBusy();
+    return;
   }
-  msg += "\nMohon instruksi pembayarannya. Terima kasih.";
 
-  const waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
-
-  setTimeout(() => {
-    loadingEl.classList.remove("active");
-    window.open(waUrl, "_blank", "noopener");
-    $("rCode").textContent = code;
-    $("rTiket").textContent = jenisTiketText;
-    $("rSesi").textContent = sesi;
-    $("rJumlah").textContent = jumlahTiket + " tiket";
-    $("rTotal").textContent = "Rp" + total.toLocaleString("id-ID");
-    orderArea.hidden = true;
-    stickyBar.hidden = true;
-    successCard.hidden = false;
-    setProgress(2);
-    window.scrollTo({ top: 0, behavior: RM ? "auto" : "smooth" });
-    document.body.style.paddingBottom = "40px";
-  }, 900);
-
-  $("reopenWa").addEventListener("click", () => window.open(waUrl, "_blank", "noopener"));
+  setTimeout(() => { location.href = "qris.html"; }, 900);
 });
 })();
 </script>
